@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project Fundamentals — Financial literacy for students</title>
+  <meta name="description" content="Project Fundamentals covers spending habits and clickbait, investing, and banking — the practical money knowledge that doesn't fit in a textbook.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===== 1. Nav bar ===== -->
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__logo" href="index.html">Project Fundamentals</a>
+
+      <button
+        class="nav__toggle"
+        id="navToggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="navMenu"
+        aria-label="Menu">
+        <span class="nav__toggle-bar" aria-hidden="true"></span>
+        <span class="nav__toggle-bar" aria-hidden="true"></span>
+        <span class="nav__toggle-bar" aria-hidden="true"></span>
+      </button>
+
+      <ul class="nav__menu" id="navMenu">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="spending.html">Spending</a></li>
+        <li><a href="investing.html">Investing</a></li>
+        <li><a href="banking.html">Banking</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ===== 2. Hero ===== -->
+    <section class="hero">
+      <div class="wrap">
+        <p class="hero__eyebrow">A financial literacy resource by HCI students, for HCI students</p>
+        <h1 class="hero__headline">9 in 10 students say school never taught them this.</h1>
+        <p class="hero__sub">Project Fundamentals covers spending habits and clickbait, investing, and banking — the practical money knowledge that doesn't fit in a textbook.</p>
+        <a class="btn" href="#pillars" data-scroll>Explore the guides</a>
+      </div>
+    </section>
+
+    <!-- ===== 3. Stat strip (receipt) ===== -->
+    <section class="stats" aria-labelledby="stats-heading">
+      <h2 class="visually-hidden" id="stats-heading">Survey findings</h2>
+      <div class="wrap">
+        <dl class="stats__list">
+          <div class="stat">
+            <dt class="stat__label">don't think school teaches enough financial literacy</dt>
+            <dd class="stat__value">96.5%</dd>
+          </div>
+          <div class="stat">
+            <dt class="stat__label">have never learned about investing before</dt>
+            <dd class="stat__value">63.2%</dd>
+          </div>
+          <div class="stat">
+            <dt class="stat__label">have encountered a suspicious 'get rich quick' offer online</dt>
+            <dd class="stat__value">89.5%</dd>
+          </div>
+        </dl>
+        <p class="stats__caption">Based on a survey of 57 Sec 1–4 students conducted as part of this project.</p>
+      </div>
+    </section>
+
+    <!-- ===== 4. Pillar cards ===== -->
+    <section class="pillars" id="pillars" aria-labelledby="pillars-heading">
+      <div class="wrap">
+        <h2 class="section-heading" id="pillars-heading">Three things worth knowing</h2>
+
+        <ul class="pillars__grid">
+          <li class="card card--spending">
+            <a class="card__link" href="spending.html">
+              <!-- TODO: replace icon placeholder with final Spending icon (alt="" — decorative) -->
+              <span class="card__icon" aria-hidden="true"></span>
+              <h3 class="card__title">Spending Psychology &amp; Clickbait</h3>
+              <p class="card__desc">Why you spend more than you mean to — impulse buying, peer pressure, "too good to be true" offers, and how digital payments make spending feel invisible.</p>
+            </a>
+          </li>
+
+          <li class="card card--investing">
+            <a class="card__link" href="investing.html">
+              <!-- TODO: replace icon placeholder with final Investing icon (alt="" — decorative) -->
+              <span class="card__icon" aria-hidden="true"></span>
+              <h3 class="card__title">Investing &amp; Growth</h3>
+              <p class="card__desc">What stocks, bonds, and crypto actually are, and how risk and return trade off against each other.</p>
+            </a>
+          </li>
+
+          <li class="card card--banking">
+            <a class="card__link" href="banking.html">
+              <!-- TODO: replace icon placeholder with final Banking icon (alt="" — decorative) -->
+              <span class="card__icon" aria-hidden="true"></span>
+              <h3 class="card__title">Banking &amp; Digital Payments</h3>
+              <p class="card__desc">How banks and credit actually work, and why tap-to-pay makes it easier to lose track of what you're spending.</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== 5. Footer ===== -->
+  <footer class="site-footer">
+    <div class="wrap site-footer__inner">
+      <p class="site-footer__cred">Project Fundamentals — a Project Work resource, 2026</p>
+
+      <nav class="site-footer__nav" aria-label="Footer">
+        <ul>
+          <li><a href="spending.html">Spending</a></li>
+          <li><a href="investing.html">Investing</a></li>
+          <li><a href="banking.html">Banking</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+        <a class="site-footer__ig" href="https://www.instagram.com/project.fundamentals/" aria-label="Project Fundamentals on Instagram" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" focusable="false">
+            <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+            <circle cx="12" cy="12" r="4"></circle>
+            <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"></circle>
+          </svg>
+        </a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

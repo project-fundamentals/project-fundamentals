@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spending Psychology & Clickbait — Project Fundamentals</title>
+  <meta name="description" content="Why you spend more than you mean to — impulse buying, peer pressure, digital payments, and how ordinary marketing shares its playbook with scams.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page--spending">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===== 1. Nav bar ===== -->
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__logo" href="index.html">Project Fundamentals</a>
+
+      <button
+        class="nav__toggle"
+        id="navToggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="navMenu"
+        aria-label="Menu">
+        <span class="nav__toggle-bar" aria-hidden="true"></span>
+        <span class="nav__toggle-bar" aria-hidden="true"></span>
+        <span class="nav__toggle-bar" aria-hidden="true"></span>
+      </button>
+
+      <ul class="nav__menu" id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="spending.html" aria-current="page">Spending</a></li>
+        <li><a href="investing.html">Investing</a></li>
+        <li><a href="banking.html">Banking</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ===== 1. Page intro ===== -->
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="page-hero__eyebrow">Spending Psychology &amp; Clickbait</p>
+        <h1 class="page-hero__headline">You spend more than you mean to. Here's why.</h1>
+        <p class="page-hero__sub">Teenagers overspend even when they know basic financial advice — because most overspending isn't a knowledge problem, it's a psychology problem.</p>
+      </div>
+    </section>
+
+    <!-- ===== 2. What's actually happening — accordion ===== -->
+    <section class="section" aria-labelledby="forces-heading">
+      <div class="wrap">
+        <h2 class="section-heading section-heading--accent" id="forces-heading">Four things working against you</h2>
+
+        <div class="accordion">
+          <details class="accordion__item">
+            <summary class="accordion__summary">
+              <span class="accordion__summary-text">
+                <span class="accordion__title">Impulse buying</span>
+                <span class="accordion__teaser">Instant gratification beats long-term thinking.</span>
+              </span>
+              <span class="accordion__icon" aria-hidden="true"></span>
+            </summary>
+            <p class="accordion__body">Teenagers are wired to prioritise instant gratification and underestimate long-term costs. That's not a character flaw — it's how the teenage brain weighs immediate reward against a delayed one. Recognising the pull in the moment is the first defence against it.</p>
+          </details>
+
+          <details class="accordion__item">
+            <summary class="accordion__summary">
+              <span class="accordion__summary-text">
+                <span class="accordion__title">Social pressure</span>
+                <span class="accordion__teaser">Peers and online trends shape what feels "necessary."</span>
+              </span>
+              <span class="accordion__icon" aria-hidden="true"></span>
+            </summary>
+            <p class="accordion__body">Purchases don't happen in a vacuum. What friends have, what's trending online, and fear of missing out all quietly raise the bar for what feels like a normal thing to buy — even when nothing about the purchase itself changed.</p>
+          </details>
+
+          <details class="accordion__item">
+            <summary class="accordion__summary">
+              <span class="accordion__summary-text">
+                <span class="accordion__title">Digital payments hide the cost</span>
+                <span class="accordion__teaser">Tapping a card doesn't feel like spending money.</span>
+              </span>
+              <span class="accordion__icon" aria-hidden="true"></span>
+            </summary>
+            <p class="accordion__body">Paying with cash makes the loss of money physical and immediate. Tapping a card or phone removes that friction — digital payments reduce the "pain of paying," which makes it easier to spend without registering that real money left your account.</p>
+          </details>
+
+          <details class="accordion__item">
+            <summary class="accordion__summary">
+              <span class="accordion__summary-text">
+                <span class="accordion__title">Marketing and clickbait</span>
+                <span class="accordion__teaser">Ads and online trends are built to bypass your judgment.</span>
+              </span>
+              <span class="accordion__icon" aria-hidden="true"></span>
+            </summary>
+            <p class="accordion__body">Marketing strategies and online trends are designed to create urgency and desire before you've had time to think it through. The same emotional triggers — urgency, social proof, fear of missing out — show up in ordinary ads and in outright scams.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 3. Too good to be true — scam awareness ===== -->
+    <section class="section section--alt" aria-labelledby="scam-heading">
+      <div class="wrap">
+        <h2 class="section-heading section-heading--accent" id="scam-heading">When persuasion becomes a scam</h2>
+        <p class="section-body">The line between aggressive marketing and an outright scam is thinner than it looks. Scams use the exact same emotional triggers as ordinary ads — just turned up further.</p>
+
+        <div class="comparison">
+          <div class="comparison__col">
+            <h3 class="comparison__title">Common risks</h3>
+            <ul class="comparison__list">
+              <li>Youth-targeted scams</li>
+              <li>High-risk "get rich quick" money schemes</li>
+              <li>Confusing legitimate investing with speculation or gambling</li>
+            </ul>
+          </div>
+
+          <div class="comparison__col">
+            <h3 class="comparison__title">How scams manipulate</h3>
+            <ul class="comparison__list">
+              <li>Urgency ("offer ends in 10 minutes")</li>
+              <li>Social proof ("thousands already joined")</li>
+              <li>A focus on the reward while glossing over the odds or the catch</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="callout">Teenagers tend to misjudge risk by focusing on the reward and ignoring the probability of loss. Slowing down and asking "why is this so urgent?" is often enough to spot the pattern.</p>
+      </div>
+    </section>
+
+    <!-- ===== 4. Self-check ===== -->
+    <section class="section" aria-labelledby="check-heading">
+      <div class="wrap">
+        <h2 class="section-heading section-heading--accent" id="check-heading">Before you buy, ask yourself</h2>
+
+        <ul class="checklist">
+          <li class="checklist__item">Would I still want this if I saw it again tomorrow?</li>
+          <li class="checklist__item">Am I buying this because I need it, or because of how it's being marketed to me?</li>
+          <li class="checklist__item">If a friend described this deal to me, would it sound realistic?</li>
+          <li class="checklist__item">Is there urgency being placed on me to decide right now?</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== 5. Closing CTA ===== -->
+    <section class="cta-band">
+      <div class="wrap cta-band__inner">
+        <p class="cta-band__text">Spending is only half the picture. See how investing lets your money grow instead of just sitting still.</p>
+        <a class="btn" href="investing.html">Explore Investing &amp; Growth</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== 5. Footer ===== -->
+  <footer class="site-footer">
+    <div class="wrap site-footer__inner">
+      <p class="site-footer__cred">Project Fundamentals — a Project Work resource, 2026</p>
+
+      <nav class="site-footer__nav" aria-label="Footer">
+        <ul>
+          <li><a href="spending.html">Spending</a></li>
+          <li><a href="investing.html">Investing</a></li>
+          <li><a href="banking.html">Banking</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+        <a class="site-footer__ig" href="https://www.instagram.com/project.fundamentals/" aria-label="Project Fundamentals on Instagram" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" focusable="false">
+            <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+            <circle cx="12" cy="12" r="4"></circle>
+            <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"></circle>
+          </svg>
+        </a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Banking & Digital Payments — Project Fundamentals</title>
+  <meta name="description" content="How banks and credit actually work, and why tap-to-pay makes it easier to lose track of what you're spending.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page--banking">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===== 1. Nav bar ===== -->
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__logo" href="index.html">Project Fundamentals</a>
+
+      <button
+        class="nav__toggle"
+        id="navToggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="navMenu"
+        aria-label="Menu">
+        <span class="nav__toggle-bar" aria-hidden="true"></span>
+        <span class="nav__toggle-bar" aria-hidden="true"></span>
+        <span class="nav__toggle-bar" aria-hidden="true"></span>
+      </button>
+
+      <ul class="nav__menu" id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="spending.html">Spending</a></li>
+        <li><a href="investing.html">Investing</a></li>
+        <li><a href="banking.html" aria-current="page">Banking</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ===== 1. Page intro ===== -->
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="page-hero__eyebrow">Banking &amp; Digital Payments</p>
+        <h1 class="page-hero__headline">Tap-to-pay is convenient. That's exactly the problem.</h1>
+        <p class="page-hero__sub">Understanding how banks, credit, and digital payments actually work now helps you avoid debt and spend responsibly later.</p>
+      </div>
+    </section>
+
+    <!-- ===== 2. How banks actually work ===== -->
+    <section class="section" aria-labelledby="banks-heading">
+      <div class="wrap">
+        <h2 class="section-heading section-heading--accent" id="banks-heading">Where a bank's money comes from</h2>
+        <p class="section-body">Banks aren't just a safe place to store money — they're a business. Banks earn money by charging interest on the loans they give out. Every loan, credit card balance, or overdraft that isn't paid off in full is generating income for the bank, not just a convenience for you.</p>
+      </div>
+    </section>
+
+    <!-- ===== 3. Digital payments & credit cards ===== -->
+    <section class="section section--alt" aria-labelledby="digital-heading">
+      <div class="wrap">
+        <h2 class="section-heading section-heading--accent" id="digital-heading">Why tapping doesn't feel like spending</h2>
+        <p class="section-body">Credit cards and digital payments — e-wallets, contactless, online checkout — separate the <em>act of spending</em> from the <em>act of paying</em>. That separation is convenient, but it can encourage overspending, because the moment of paying no longer lines up with the moment of buying.</p>
+        <p class="callout">Risk: if a credit card balance isn't fully repaid, debt can accumulate quickly.</p>
+      </div>
+    </section>
+
+    <!-- ===== 4. The minimum payment trap (interactive) ===== -->
+    <section class="section" aria-labelledby="trap-heading">
+      <div class="wrap">
+        <h2 class="section-heading section-heading--accent" id="trap-heading">The minimum payment trap</h2>
+        <p class="section-body">Paying only the minimum on a balance feels responsible — you're paying <em>something</em>. But compound interest means unpaid debt grows over time, and minimum payments can keep you paying for far longer than expected.</p>
+
+        <div class="calculator">
+          <div class="calculator__controls">
+            <div class="field">
+              <div class="field__label-row">
+                <label for="balanceInput">Starting balance</label>
+                <output class="field__value" for="balanceInput" id="balanceOutput">$500</output>
+              </div>
+              <input type="range" id="balanceInput" min="100" max="3000" step="50" value="500" aria-describedby="balanceOutput">
+            </div>
+
+            <div class="field">
+              <div class="field__label-row">
+                <label for="minPctInput">Monthly minimum payment</label>
+                <output class="field__value" for="minPctInput" id="minPctOutput">3%</output>
+              </div>
+              <input type="range" id="minPctInput" min="1" max="10" step="0.5" value="3" aria-describedby="minPctOutput">
+            </div>
+          </div>
+
+          <div class="calculator__results">
+            <div class="result">
+              <h3 class="result__title">Paying in full</h3>
+              <p class="result__stat">$0</p>
+              <p class="result__desc">Debt cleared immediately. No interest paid.</p>
+            </div>
+
+            <div class="result result--warn">
+              <h3 class="result__title">Paying only the minimum</h3>
+              <p class="result__stat" id="monthsOut">— months</p>
+              <p class="result__desc"><span id="interestOut">—</span> in interest paid overall, assuming an illustrative ~20% annual interest rate.</p>
+              <p class="result__note" id="neverNote" hidden>At this minimum payment, you're paying less each month than the interest being added — so the balance grows instead of shrinking, no matter how long you keep paying.</p>
+            </div>
+          </div>
+
+          <p class="calculator__disclaimer">Illustrative example only — real interest rates and repayment terms vary by bank and card.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 5. Closing CTA ===== -->
+    <section class="cta-band">
+      <div class="wrap cta-band__inner">
+        <p class="cta-band__text">Banking habits and spending psychology are two sides of the same coin.</p>
+        <a class="btn" href="spending.html">Revisit Spending Psychology &amp; Clickbait</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== 5. Footer ===== -->
+  <footer class="site-footer">
+    <div class="wrap site-footer__inner">
+      <p class="site-footer__cred">Project Fundamentals — a Project Work resource, 2026</p>
+
+      <nav class="site-footer__nav" aria-label="Footer">
+        <ul>
+          <li><a href="spending.html">Spending</a></li>
+          <li><a href="investing.html">Investing</a></li>
+          <li><a href="banking.html">Banking</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+        <a class="site-footer__ig" href="https://www.instagram.com/project.fundamentals/" aria-label="Project Fundamentals on Instagram" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" focusable="false">
+            <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+            <circle cx="12" cy="12" r="4"></circle>
+            <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"></circle>
+          </svg>
+        </a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
