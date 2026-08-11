@@ -1,180 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>About — Project Fundamentals</title>
-  <meta name="description" content="Why we built Project Fundamentals: a financial literacy resource made by HCI students for Sec 1–4 students, based on a survey of 57 respondents.">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About — Project Fundamentals</title>
+<meta name="description" content="Why we built Project Fundamentals: a financial literacy resource by HCI students, based on a survey of 57 respondents.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/png" href="logo.png">
 </head>
 <body class="page--about">
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <!-- ===== Nav bar ===== -->
-  <header class="site-header">
+<a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="siteHeader">
     <nav class="nav" aria-label="Primary">
-      <a class="nav__logo" href="index.html">Project Fundamentals</a>
+      <a class="nav__logo" href="index.html">
+        <span class="nav__logo-mark" aria-hidden="true">
+          <img src="logo.png" alt="" width="30" height="30">
+        </span>
+        Project Fundamentals
+      </a>
 
-      <button
-        class="nav__toggle"
-        id="navToggle"
-        type="button"
-        aria-expanded="false"
-        aria-controls="navMenu"
-        aria-label="Menu">
+      <button class="nav__toggle" id="navToggle" type="button"
+              aria-expanded="false" aria-controls="navMenu" aria-label="Menu">
         <span class="nav__toggle-bar" aria-hidden="true"></span>
         <span class="nav__toggle-bar" aria-hidden="true"></span>
         <span class="nav__toggle-bar" aria-hidden="true"></span>
       </button>
 
       <ul class="nav__menu" id="navMenu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="spending.html">Spending</a></li>
-        <li><a href="investing.html">Investing</a></li>
-        <li><a href="banking.html">Banking</a></li>
-        <li><a href="about.html" aria-current="page">About</a></li>
+        <li class="nav__item"><a href="index.html">Home</a></li>
+        <li class="nav__item nav__item--has-panel">
+          <button class="nav__trigger" type="button" aria-expanded="false" aria-controls="panel-spending">
+            Spending<span class="nav__chevron" aria-hidden="true"></span>
+          </button>
+          <div class="megamenu megamenu--spending" id="panel-spending" hidden>
+            <div class="megamenu__inner">
+              <div class="megamenu__lead">
+                <p class="megamenu__eyebrow">Spending &amp; Clickbait</p>
+                <p class="megamenu__blurb">The saving side of the equation.</p>
+                <a class="megamenu__overview" href="spending.html">Section overview</a>
+              </div>
+              <ul class="megamenu__links">
+            <li><a href="spending-why.html">
+              <span class="megamenu__link-title">Why we overspend</span>
+              <span class="megamenu__link-desc">Impulse buying, instant gratification, and social pressure.</span>
+            </a></li>
+            <li><a href="spending-digital.html">
+              <span class="megamenu__link-title">Why tapping doesn&#x27;t feel like spending</span>
+              <span class="megamenu__link-desc">Digital payments and the disappearing pain of paying.</span>
+            </a></li>
+            <li><a href="spending-clickbait.html">
+              <span class="megamenu__link-title">Clickbait &amp; marketing tactics</span>
+              <span class="megamenu__link-desc">How ads and trends are engineered to bypass your judgment.</span>
+            </a></li>
+            <li><a href="spending-scams.html">
+              <span class="megamenu__link-title">Scams &amp; &#x27;too good to be true&#x27;</span>
+              <span class="megamenu__link-desc">Youth-targeted schemes, and the red flags that give them away.</span>
+            </a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li class="nav__item nav__item--has-panel">
+          <button class="nav__trigger" type="button" aria-expanded="false" aria-controls="panel-investing">
+            Investing<span class="nav__chevron" aria-hidden="true"></span>
+          </button>
+          <div class="megamenu megamenu--investing" id="panel-investing" hidden>
+            <div class="megamenu__inner">
+              <div class="megamenu__lead">
+                <p class="megamenu__eyebrow">Investing &amp; Growth</p>
+                <p class="megamenu__blurb">The growth side of the equation.</p>
+                <a class="megamenu__overview" href="investing.html">Section overview</a>
+              </div>
+              <ul class="megamenu__links">
+            <li><a href="investing-basics.html">
+              <span class="megamenu__link-title">What investing actually is</span>
+              <span class="megamenu__link-desc">Risk versus return, and why saving alone isn&#x27;t enough.</span>
+            </a></li>
+            <li><a href="investing-low.html">
+              <span class="megamenu__link-title">Low-risk investments</span>
+              <span class="megamenu__link-desc">SSBs, fixed deposits and T-bills. Safe and steady.</span>
+            </a></li>
+            <li><a href="investing-medium.html">
+              <span class="megamenu__link-title">Medium-risk investments</span>
+              <span class="megamenu__link-desc">Blue-chip stocks, ETFs and index funds. Market growth.</span>
+            </a></li>
+            <li><a href="investing-high.html">
+              <span class="megamenu__link-title">High-risk &amp; speculation</span>
+              <span class="megamenu__link-desc">Crypto, meme coins and loot boxes. The danger zone.</span>
+            </a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li class="nav__item nav__item--has-panel">
+          <button class="nav__trigger" type="button" aria-expanded="false" aria-controls="panel-banking">
+            Banking<span class="nav__chevron" aria-hidden="true"></span>
+          </button>
+          <div class="megamenu megamenu--banking" id="panel-banking" hidden>
+            <div class="megamenu__inner">
+              <div class="megamenu__lead">
+                <p class="megamenu__eyebrow">Banking &amp; Payments</p>
+                <p class="megamenu__blurb">The system your money moves through.</p>
+                <a class="megamenu__overview" href="banking.html">Section overview</a>
+              </div>
+              <ul class="megamenu__links">
+            <li><a href="banking-how.html">
+              <span class="megamenu__link-title">How banks actually work</span>
+              <span class="megamenu__link-desc">Where a bank&#x27;s profit really comes from.</span>
+            </a></li>
+            <li><a href="banking-payments.html">
+              <span class="megamenu__link-title">Digital payments &amp; e-wallets</span>
+              <span class="megamenu__link-desc">Convenience, and what it costs you in awareness.</span>
+            </a></li>
+            <li><a href="banking-credit.html">
+              <span class="megamenu__link-title">Credit cards &amp; the debt trap</span>
+              <span class="megamenu__link-desc">Compound interest and the minimum payment trap.</span>
+            </a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li class="nav__item" data-active="true"><a href="about.html">About</a></li>
       </ul>
     </nav>
   </header>
+<main id="main">
+<section class="page-hero gridbg">
+  <div class="wrap">
+    <p class="page-hero__eyebrow">About this project</p>
+    <h1 class="page-hero__headline">Made by students who had the same questions.</h1>
+    <p class="page-hero__sub">Project Fundamentals is a Project Work resource built by four Hwa Chong Institution students for Sec 1–4 students — because the money knowledge you actually need day to day doesn't show up in any subject.</p>
+  </div>
+</section>
 
-  <main id="main">
+<section class="section">
+  <div class="wrap wrap--narrow">
+    <h2 class="section-heading section-heading--accent">Why we built it</h2>
+    <p class="section-body">Many teenagers lack a clear understanding of how to manage their pocket money. Purchases happen without hesitation, saving feels abstract, and investing sounds like something adults do later. Without guidance, that gap doesn't close on its own — it just becomes an adult habit.</p>
+    <p class="section-body">We wanted to build something that treats students as capable of understanding real financial concepts, rather than reducing everything to "spend less". That means explaining why overspending happens, what the real options for growing money are, and where the genuine dangers sit.</p>
+  </div>
+</section>
 
-    <!-- ===== 1. Page intro ===== -->
-    <section class="page-hero">
-      <div class="wrap">
-        <p class="page-hero__eyebrow">About this project</p>
-        <h1 class="page-hero__headline">Made by students who had the same questions.</h1>
-        <p class="page-hero__sub">Project Fundamentals is a Project Work resource built by four Hwa Chong Institution students for Sec 1–4 students — because the money knowledge you actually need day to day doesn't show up in any subject.</p>
-      </div>
-    </section>
+<section class="section section--alt">
+  <div class="wrap">
+    <h2 class="section-heading section-heading--accent">What our research found</h2>
+    <p class="section-body">Before building anything, we surveyed 57 Sec 1–4 students to check whether the problem we assumed existed actually did. It did.</p>
+    <ul class="findings">
+      <li class="findings__item"><span class="findings__value">96.5%</span><span class="findings__label">don't think school teaches enough financial literacy</span></li>
+      <li class="findings__item"><span class="findings__value">63.2%</span><span class="findings__label">have never learned about investing before</span></li>
+      <li class="findings__item"><span class="findings__value">89.5%</span><span class="findings__label">have encountered a suspicious 'get rich quick' offer online</span></li>
+      <li class="findings__item"><span class="findings__value">78.9%</span><span class="findings__label">don't know how bank systems work</span></li>
+    </ul>
+    <p class="stats__caption">Based on a needs analysis survey of 57 Sec 1–4 students conducted as part of this project. Respondents skewed towards Sec 2.</p>
+  </div>
+</section>
 
-    <!-- ===== 2. Why we built it ===== -->
-    <section class="section" aria-labelledby="why-heading">
-      <div class="wrap">
-        <h2 class="section-heading section-heading--accent" id="why-heading">Why we built it</h2>
-        <p class="section-body">Many teenagers lack a clear understanding of how to manage their pocket money. Purchases happen without hesitation, saving feels abstract, and investing sounds like something adults do later. Without guidance, that gap doesn't close on its own — it just becomes an adult habit.</p>
-        <p class="section-body">We wanted to build something that treats students as capable of understanding real financial concepts, rather than reducing everything to "spend less." That means explaining <em>why</em> overspending happens, what the real options for growing money are, and where the genuine dangers sit.</p>
-      </div>
-    </section>
+<section class="section">
+  <div class="wrap">
+    <h2 class="section-heading section-heading--accent">The team</h2>
+    <!-- TODO: replace the four placeholders below with real names, classes and roles. -->
+    <ul class="team">
+      <li class="member"><p class="member__name">Name</p><p class="member__role">Role — e.g. research lead, spending psychology</p></li>
+      <li class="member"><p class="member__name">Name</p><p class="member__role">Role — e.g. investing research</p></li>
+      <li class="member"><p class="member__name">Name</p><p class="member__role">Role — e.g. banking research, website</p></li>
+      <li class="member"><p class="member__name">Name</p><p class="member__role">Role — e.g. Instagram content, design</p></li>
+    </ul>
+    <p class="section-body">Hwa Chong Institution — Project Work, 2026.</p>
+  </div>
+</section>
 
-    <!-- ===== 3. What we found ===== -->
-    <section class="section section--alt" aria-labelledby="research-heading">
-      <div class="wrap">
-        <h2 class="section-heading section-heading--accent" id="research-heading">What our research found</h2>
-        <p class="section-body">Before building anything, we surveyed 57 Sec 1–4 students to check whether the problem we assumed existed actually did. It did.</p>
-
-        <ul class="findings">
-          <li class="findings__item">
-            <span class="findings__value">96.5%</span>
-            <span class="findings__label">don't think school teaches enough financial literacy</span>
-          </li>
-          <li class="findings__item">
-            <span class="findings__value">63.2%</span>
-            <span class="findings__label">have never learned about investing before</span>
-          </li>
-          <li class="findings__item">
-            <span class="findings__value">89.5%</span>
-            <span class="findings__label">have encountered a suspicious 'get rich quick' offer online</span>
-          </li>
-          <li class="findings__item">
-            <span class="findings__value">78.9%</span>
-            <span class="findings__label">don't know how bank systems work</span>
-          </li>
-        </ul>
-
-        <p class="stats__caption">Based on a needs analysis survey of 57 Sec 1–4 students conducted as part of this project. Respondents skewed towards Sec 2.</p>
-      </div>
-    </section>
-
-    <!-- ===== 4. How it's organised ===== -->
-    <section class="section" aria-labelledby="structure-heading">
-      <div class="wrap">
-        <h2 class="section-heading section-heading--accent" id="structure-heading">How this resource is organised</h2>
-        <p class="section-body">Our research pointed to three areas where the gap was widest. Each has its own guide.</p>
-
-        <ul class="pillars__grid">
-          <li class="card card--spending">
-            <a class="card__link" href="spending.html">
-              <span class="card__icon" aria-hidden="true"></span>
-              <h3 class="card__title">Spending Psychology &amp; Clickbait</h3>
-              <p class="card__desc">The saving side — why money leaves your account faster than you intend, and how marketing and scams share a playbook.</p>
-            </a>
-          </li>
-          <li class="card card--investing">
-            <a class="card__link" href="investing.html">
-              <span class="card__icon" aria-hidden="true"></span>
-              <h3 class="card__title">Investing &amp; Growth</h3>
-              <p class="card__desc">The growth side — what your options actually are, sorted by how much risk each one carries.</p>
-            </a>
-          </li>
-          <li class="card card--banking">
-            <a class="card__link" href="banking.html">
-              <span class="card__icon" aria-hidden="true"></span>
-              <h3 class="card__title">Banking &amp; Digital Payments</h3>
-              <p class="card__desc">The spending side — how banks make money, and why tap-to-pay quietly changes your behaviour.</p>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- ===== 5. The team ===== -->
-    <section class="section section--alt" aria-labelledby="team-heading">
-      <div class="wrap">
-        <h2 class="section-heading section-heading--accent" id="team-heading">The team</h2>
-
-        <!-- TODO: replace the four placeholders below with real names, classes, and roles.
-             Delete the "Name" text and fill in each <p class="member__name"> and <p class="member__role">. -->
-        <ul class="team">
-          <li class="member">
-            <p class="member__name">Name</p>
-            <p class="member__role">Role — e.g. research lead, spending psychology</p>
-          </li>
-          <li class="member">
-            <p class="member__name">Name</p>
-            <p class="member__role">Role — e.g. investing research</p>
-          </li>
-          <li class="member">
-            <p class="member__name">Name</p>
-            <p class="member__role">Role — e.g. banking research, website</p>
-          </li>
-          <li class="member">
-            <p class="member__name">Name</p>
-            <p class="member__role">Role — e.g. Instagram content, design</p>
-          </li>
-        </ul>
-
-        <p class="section-body">Hwa Chong Institution — Project Work, 2026.</p>
-      </div>
-    </section>
-
-    <!-- ===== 6. Closing CTA ===== -->
-    <section class="cta-band">
-      <div class="wrap cta-band__inner">
-        <p class="cta-band__text">We also share shorter tips, myth-busting, and quick quizzes on Instagram.</p>
-        <a class="btn" href="https://www.instagram.com/project.fundamentals/" target="_blank" rel="noopener">Follow @project.fundamentals</a>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ===== Footer ===== -->
+<section class="cta-band">
+  <div class="wrap cta-band__inner">
+    <p class="cta-band__text">We also share shorter tips, myth-busting and quick quizzes on Instagram.</p>
+    <a class="btn" href="https://www.instagram.com/project.fundamentals/" target="_blank" rel="noopener">Follow @project.fundamentals</a>
+  </div>
+</section>
+</main>
   <footer class="site-footer">
-    <div class="wrap site-footer__inner">
-      <p class="site-footer__cred">Project Fundamentals — a Project Work resource, 2026</p>
-
-      <nav class="site-footer__nav" aria-label="Footer">
+    <div class="wrap">
+      <div class="site-footer__grid">
+      <div class="site-footer__col">
+        <p class="site-footer__coltitle"><a href="spending.html">Spending &amp; Clickbait</a></p>
         <ul>
-          <li><a href="spending.html">Spending</a></li>
-          <li><a href="investing.html">Investing</a></li>
-          <li><a href="banking.html">Banking</a></li>
-          <li><a href="about.html">About</a></li>
+          <li><a href="spending-why.html">Why we overspend</a></li>
+          <li><a href="spending-digital.html">Why tapping doesn&#x27;t feel like spending</a></li>
+          <li><a href="spending-clickbait.html">Clickbait &amp; marketing tactics</a></li>
+          <li><a href="spending-scams.html">Scams &amp; &#x27;too good to be true&#x27;</a></li>
         </ul>
+      </div>
+      <div class="site-footer__col">
+        <p class="site-footer__coltitle"><a href="investing.html">Investing &amp; Growth</a></p>
+        <ul>
+          <li><a href="investing-basics.html">What investing actually is</a></li>
+          <li><a href="investing-low.html">Low-risk investments</a></li>
+          <li><a href="investing-medium.html">Medium-risk investments</a></li>
+          <li><a href="investing-high.html">High-risk &amp; speculation</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__col">
+        <p class="site-footer__coltitle"><a href="banking.html">Banking &amp; Payments</a></p>
+        <ul>
+          <li><a href="banking-how.html">How banks actually work</a></li>
+          <li><a href="banking-payments.html">Digital payments &amp; e-wallets</a></li>
+          <li><a href="banking-credit.html">Credit cards &amp; the debt trap</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__col">
+        <p class="site-footer__coltitle"><a href="about.html">About</a></p>
+        <ul>
+          <li><a href="about.html">Our research</a></li>
+          <li><a href="https://www.instagram.com/project.fundamentals/" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+      </div>
+
+      <div class="site-footer__base">
+        <p class="site-footer__cred">Project Fundamentals — a Project Work resource, 2026</p>
         <a class="site-footer__ig" href="https://www.instagram.com/project.fundamentals/" aria-label="Project Fundamentals on Instagram" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" focusable="false">
             <rect x="3" y="3" width="18" height="18" rx="5"></rect>
@@ -182,10 +226,10 @@
             <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"></circle>
           </svg>
         </a>
-      </nav>
+        <p class="site-footer__credit">Site design adapted from the <a href="https://templatemo.com" target="_blank" rel="noopener">NovaPay template by TemplateMo</a>, used under the CC BY 3.0 licence. All content, structure and interactive features are our own.</p>
+      </div>
     </div>
   </footer>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

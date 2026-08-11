@@ -4,32 +4,76 @@
 
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-  /* ---- Mobile nav ---------------------------------------------------- */
+  /* ---- Navigation: mobile toggle + mega menu ------------------------- */
 
   var toggle = document.getElementById('navToggle');
   var menu = document.getElementById('navMenu');
+  var triggers = Array.prototype.slice.call(document.querySelectorAll('.nav__trigger'));
+  var desktop = window.matchMedia('(min-width: 900px)');
+
+  function closePanels(except) {
+    triggers.forEach(function (t) {
+      if (t === except) return;
+      t.setAttribute('aria-expanded', 'false');
+      var panel = document.getElementById(t.getAttribute('aria-controls'));
+      if (panel) panel.hidden = true;
+    });
+  }
 
   function closeMenu() {
+    if (!menu || !toggle) return;
     menu.classList.remove('is-open');
     toggle.setAttribute('aria-expanded', 'false');
+    closePanels(null);
   }
 
   if (toggle && menu) {
     toggle.addEventListener('click', function () {
       var open = menu.classList.toggle('is-open');
       toggle.setAttribute('aria-expanded', String(open));
+      if (!open) closePanels(null);
     });
+  }
 
-    // Close after choosing a link, and on Escape.
+  triggers.forEach(function (trigger) {
+    var panel = document.getElementById(trigger.getAttribute('aria-controls'));
+    if (!panel) return;
+
+    trigger.addEventListener('click', function () {
+      var isOpen = trigger.getAttribute('aria-expanded') === 'true';
+      closePanels(trigger);
+      trigger.setAttribute('aria-expanded', String(!isOpen));
+      panel.hidden = isOpen;
+    });
+  });
+
+  /* Close when focus or a click leaves the header. */
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.nav')) closeMenu();
+  });
+
+  document.addEventListener('focusin', function (e) {
+    if (desktop.matches && !e.target.closest('.nav')) closePanels(null);
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') return;
+    var openTrigger = triggers.filter(function (t) {
+      return t.getAttribute('aria-expanded') === 'true';
+    })[0];
+    if (openTrigger) {
+      closePanels(null);
+      openTrigger.focus();
+    } else if (menu && menu.classList.contains('is-open')) {
+      closeMenu();
+      toggle.focus();
+    }
+  });
+
+  /* Choosing a destination closes everything. */
+  if (menu) {
     menu.addEventListener('click', function (e) {
       if (e.target.closest('a')) closeMenu();
-    });
-
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && menu.classList.contains('is-open')) {
-        closeMenu();
-        toggle.focus();
-      }
     });
   }
 
@@ -162,5 +206,38 @@
 
     riskDial.addEventListener('input', updateDial);
     updateDial();
+  }
+
+  /* ---- Header background on scroll ------------------------------------ */
+
+  var siteHeader = document.getElementById('siteHeader');
+
+  if (siteHeader) {
+    var onScroll = function () {
+      siteHeader.classList.toggle('scrolled', window.scrollY > 10);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
+  /* ---- Silk reveal on scroll ------------------------------------------ */
+
+  var revealTargets = document.querySelectorAll('.silk-reveal');
+
+  if (revealTargets.length) {
+    if (reduceMotion.matches || !('IntersectionObserver' in window)) {
+      revealTargets.forEach(function (el) { el.classList.add('visible'); });
+    } else {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+      revealTargets.forEach(function (el) { observer.observe(el); });
+    }
   }
 })();

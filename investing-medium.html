@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Banking &amp; Payments — Project Fundamentals</title>
-<meta name="description" content="How banks actually make money, what happens when you tap to pay, and how credit card debt quietly compounds behind the scenes.">
+<title>Medium-risk investments — Project Fundamentals</title>
+<meta name="description" content="Blue-chip stocks, ETFs and index funds. Market growth.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <link rel="icon" type="image/png" href="logo.png">
 </head>
-<body class="page--banking">
+<body class="page--investing">
 <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header" id="siteHeader">
     <nav class="nav" aria-label="Primary">
@@ -63,7 +63,7 @@
             </div>
           </div>
         </li>
-        <li class="nav__item nav__item--has-panel">
+        <li class="nav__item nav__item--has-panel" data-active="true">
           <button class="nav__trigger" type="button" aria-expanded="false" aria-controls="panel-investing">
             Investing<span class="nav__chevron" aria-hidden="true"></span>
           </button>
@@ -95,7 +95,7 @@
             </div>
           </div>
         </li>
-        <li class="nav__item nav__item--has-panel" data-active="true">
+        <li class="nav__item nav__item--has-panel">
           <button class="nav__trigger" type="button" aria-expanded="false" aria-controls="panel-banking">
             Banking<span class="nav__chevron" aria-hidden="true"></span>
           </button>
@@ -130,85 +130,119 @@
 <main id="main">
 <nav class="breadcrumb" aria-label="Breadcrumb"><div class="wrap"><ol>
   <li><a href="index.html">Home</a></li>
-  <li aria-current="page">Banking</li>
+  <li><a href="investing.html">Investing</a></li>
+  <li aria-current="page">Medium-risk investments</li>
 </ol></div></nav>
-<section class="page-hero gridbg">
-  <div class="wrap">
-    <p class="page-hero__eyebrow">Banking &amp; Payments</p>
-    <h1 class="page-hero__headline">The system your money moves through.</h1>
-    <p class="page-hero__sub">How banks actually make money, what happens when you tap to pay, and how credit card debt quietly compounds behind the scenes.</p>
-  </div>
-</section>
-
-<section class="section">
-  <div class="wrap">
+<div class="layout wrap">
+  <aside class="sidebar" aria-labelledby="sidebar-heading">
+    <p class="sidebar__heading" id="sidebar-heading">In this section</p>
+    <ul class="sidebar__list">
+      <li><a href="investing.html">Overview</a></li>
+      <li><a href="investing-basics.html">What investing actually is</a></li>
+      <li><a href="investing-low.html">Low-risk investments</a></li>
+      <li><a href="investing-medium.html" aria-current="page">Medium-risk investments</a></li>
+      <li><a href="investing-high.html">High-risk &amp; speculation</a></li>
+    </ul>
+  </aside>
+  <article class="article">
+    <p class="article__eyebrow">Investing</p>
+    <h1 class="article__title">Medium-risk investments</h1>
+    <p class="article__lede">Blue-chip stocks, ETFs and index funds. Market growth.</p>
     <div class="banner" aria-hidden="true">
       <svg class="banner__svg" viewBox="0 0 640 150" preserveAspectRatio="xMidYMid slice">
         <rect width="640" height="150" fill="var(--bg2)"/>
-        <!-- bank -->
-        <g transform="translate(48,30)">
-          <path d="M0 34 L57 6 L114 34 Z" fill="var(--bg)" stroke="var(--text2)" stroke-width="2.5" stroke-linejoin="round"/>
-          <rect x="8" y="34" width="98" height="48" fill="var(--bg)" stroke="var(--text2)" stroke-width="2.5"/>
-          <line x1="28" y1="40" x2="28" y2="76" stroke="var(--text2)" stroke-width="2.5"/>
-          <line x1="57" y1="40" x2="57" y2="76" stroke="var(--text2)" stroke-width="2.5"/>
-          <line x1="86" y1="40" x2="86" y2="76" stroke="var(--text2)" stroke-width="2.5"/>
-          <rect x="0" y="82" width="114" height="9" fill="var(--bg)" stroke="var(--text2)" stroke-width="2.5"/>
-          <text x="57" y="28" text-anchor="middle" font-size="11" font-weight="800" fill="var(--accent)">$</text>
+        <!-- SG skyline silhouette -->
+        <g fill="var(--bg4)">
+          <rect x="30" y="70" width="26" height="80"/>
+          <rect x="64" y="52" width="20" height="98"/>
+          <rect x="92" y="84" width="30" height="66"/>
+          <rect x="130" y="40" width="22" height="110"/>
+          <rect x="160" y="64" width="26" height="86"/>
+          <!-- MBS-style three towers + deck -->
+          <rect x="220" y="58" width="16" height="92"/>
+          <rect x="242" y="58" width="16" height="92"/>
+          <rect x="264" y="58" width="16" height="92"/>
+          <path d="M212 58 q40 -18 76 0 l-4 10 q-34 -15 -68 0 z"/>
         </g>
-        <!-- MRT gantry with tap -->
-        <g transform="translate(250,34)">
-          <rect x="0" y="0" width="16" height="96" rx="4" fill="var(--bg3)" stroke="var(--text2)" stroke-width="2.5"/>
-          <rect x="96" y="0" width="16" height="96" rx="4" fill="var(--bg3)" stroke="var(--text2)" stroke-width="2.5"/>
-          <rect x="10" y="34" width="44 " height="10" rx="5" fill="var(--sky4)" stroke="var(--accent)" stroke-width="2"/>
-          <rect x="58" y="34" width="44" height="10" rx="5" fill="var(--sky4)" stroke="var(--accent)" stroke-width="2"/>
-          <rect x="-4" y="6" width="24" height="14" rx="4" fill="var(--sky4)" stroke="var(--accent)" stroke-width="2"/>
-          <path d="M26 2 a12 12 0 0 1 0 20 M33 -4 a20 20 0 0 1 0 32" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/>
-          <text x="56" y="118" text-anchor="middle" font-size="10" fill="var(--text2)">tap in · tap out</text>
-        </g>
-        <!-- card + phone pay -->
-        <g transform="translate(440,42)">
-          <rect x="0" y="8" width="82" height="52" rx="9" fill="var(--bg)" stroke="var(--text2)" stroke-width="2.5"/>
-          <rect x="0" y="17" width="82" height="11" fill="var(--text2)" opacity=".3"/>
-          <rect x="8" y="38" width="22" height="14" rx="3" fill="var(--sky4)" stroke="var(--amber)" stroke-width="1.5"/>
-          <g transform="translate(104,-6)">
-            <rect x="0" y="0" width="46" height="78" rx="10" fill="var(--bg)" stroke="var(--text2)" stroke-width="2.5"/>
-            <rect x="6" y="8" width="34" height="50" rx="3" fill="var(--bg3)"/>
-            <rect x="11" y="16" width="24" height="12" rx="3" fill="var(--sky4)" stroke="var(--accent)" stroke-width="1.5"/>
-            <text x="23" y="25" text-anchor="middle" font-size="7" font-weight="700" fill="var(--accent)">PAID</text>
-            <circle cx="23" cy="66" r="4" fill="none" stroke="var(--text2)" stroke-width="2"/>
-          </g>
+        <!-- rising chart -->
+        <polyline points="330,120 400,96 450,104 510,62 580,38" fill="none" stroke="var(--accent)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M580 38 l-16 2 m16 -2 l-4 15" stroke="var(--accent)" stroke-width="4" stroke-linecap="round" fill="none"/>
+        <circle cx="400" cy="96" r="5" fill="var(--accent)"/>
+        <circle cx="450" cy="104" r="5" fill="var(--accent)"/>
+        <circle cx="510" cy="62" r="5" fill="var(--accent)"/>
+        <!-- coin stacks -->
+        <g stroke="var(--amber)" stroke-width="2.5" fill="var(--sky4)">
+          <ellipse cx="370" cy="140" rx="16" ry="5"/>
+          <ellipse cx="370" cy="132" rx="16" ry="5"/>
+          <ellipse cx="440" cy="140" rx="16" ry="5"/>
+          <ellipse cx="440" cy="132" rx="16" ry="5"/>
+          <ellipse cx="440" cy="124" rx="16" ry="5"/>
+          <ellipse cx="510" cy="140" rx="16" ry="5"/>
+          <ellipse cx="510" cy="132" rx="16" ry="5"/>
+          <ellipse cx="510" cy="124" rx="16" ry="5"/>
+          <ellipse cx="510" cy="116" rx="16" ry="5"/>
         </g>
       </svg>
     </div>
-    <h2 class="section-heading section-heading--accent">Pages in this section</h2>
-    <ol class="hubgrid">
-      <li class="hubcard">
-        <a class="hubcard__link" href="banking-how.html">
-          <span class="hubcard__num">01</span>
-          <h2 class="hubcard__title">How banks actually work</h2>
-          <p class="hubcard__desc">Where a bank&#x27;s profit really comes from.</p>
-          <span class="hubcard__go" aria-hidden="true">Read →</span>
-        </a>
-      </li>
-      <li class="hubcard">
-        <a class="hubcard__link" href="banking-payments.html">
-          <span class="hubcard__num">02</span>
-          <h2 class="hubcard__title">Digital payments &amp; e-wallets</h2>
-          <p class="hubcard__desc">Convenience, and what it costs you in awareness.</p>
-          <span class="hubcard__go" aria-hidden="true">Read →</span>
-        </a>
-      </li>
-      <li class="hubcard">
-        <a class="hubcard__link" href="banking-credit.html">
-          <span class="hubcard__num">03</span>
-          <h2 class="hubcard__title">Credit cards &amp; the debt trap</h2>
-          <p class="hubcard__desc">Compound interest and the minimum payment trap.</p>
-          <span class="hubcard__go" aria-hidden="true">Read →</span>
-        </a>
-      </li>
-    </ol>
-  </div>
-</section>
+    <aside class="learn" aria-labelledby="learn-heading">
+      <p class="learn__heading" id="learn-heading">
+        <svg class="learn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 8l10 5 8-4v6h2V8L12 3z"/><path d="M6 11.5V15c0 1.7 2.7 3 6 3s6-1.3 6-3v-3.5l-6 3-6-3z"/></svg>
+        What you'll learn
+      </p>
+      <ul class="learn__list">
+      <li>What owning a stock actually means</li>
+      <li>How ETFs spread risk across hundreds of companies at once</li>
+      <li>What diversification protects you from — and what it can&#x27;t</li>
+      </ul>
+    </aside>
+
+    <p class="tier-label tier-label--medium">Category 2 — Market growth</p>
+    <p>Here your capital is genuinely at risk, and prices move daily. In exchange, these are the options with a realistic history of growing money meaningfully over long periods.</p>
+
+    <h2>Blue-chip stocks</h2>
+    <p class="bigstat">Own a piece of a giant</p>
+    <p><strong>What it is:</strong> Shares of ownership in large, well-established, financially stable companies with a history of reliable performance — Singtel, DBS, or Apple, for example.</p>
+    <p><strong>How it works:</strong> When you buy a stock you own a tiny piece of the company. If it makes a profit and grows, your stock value goes up, and it may share profits with you through dividends.</p>
+    <p class="reality"><strong>Reality check:</strong> Prices fluctuate daily based on market news, company earnings, and the economy. Safer than small startup stocks, but you can still lose money if the company encounters structural issues.</p>
+    <p class="didyouknow">When these giant companies make huge profits, they often distribute a portion of that cash directly back to their shareholders. Those are dividends.</p>
+    <p class="takeaway">Daily prices will wobble, but these companies have strong foundations to survive economic storms over the long haul.</p>
+
+    <h2>Exchange-traded funds (ETFs)</h2>
+    <p class="bigstat">Don't put all your eggs in one basket</p>
+    <p><strong>What it is:</strong> A basket of different stocks bundled together into a single fund that trades on the stock market, letting you buy into hundreds of companies at once.</p>
+    <p><strong>How it works:</strong> Instead of putting all your money into one company, an ETF spreads it across many — the top 30 companies in Singapore, or the top 500 in the US. This is called diversification.</p>
+
+    <div class="basket">
+      <p class="basket__caption">One company crashes. The basket holds.</p>
+      <ul class="basket__grid" aria-label="Diversification: one falling stock among many stable ones">
+        <li class="basket__item basket__item--down"><span aria-hidden="true">▼</span><span class="visually-hidden">Falling</span></li>
+        <li class="basket__item"></li><li class="basket__item"></li><li class="basket__item"></li>
+        <li class="basket__item"></li><li class="basket__item"></li><li class="basket__item"></li>
+        <li class="basket__item"></li><li class="basket__item"></li><li class="basket__item"></li>
+      </ul>
+    </div>
+
+    <p class="reality"><strong>Reality check:</strong> Diversification protects you from a single company going bankrupt, but it does not protect you from a general market crash. If the entire market goes down, your ETF drops too.</p>
+    <p class="didyouknow">Buying an ETF is like buying a sampler platter at a restaurant instead of committing to one single dish. It instantly diversifies your risk.</p>
+    <p class="takeaway">The ultimate "set-and-forget" market option for beginners who do not want to stress over tracking individual company news.</p>
+
+    <h2>S&amp;P 500 index funds</h2>
+    <p class="bigstat">The standard benchmark for market growth</p>
+    <p><strong>What it is:</strong> A fund tracking the 500 largest publicly traded corporations in America, spread across tech, healthcare, finance and retail.</p>
+    <p><strong>How it works:</strong> A single investment is instantly divided into fractional pieces of 500 different massive companies, rather than betting on any one of them.</p>
+    <p class="didyouknow">Historically the S&amp;P 500 has been considered one of the best benchmarks for long-term wealth creation, averaging a return of around 10% per year over many decades. Past performance does not guarantee future results.</p>
+    <p class="takeaway">Instead of trying to guess which individual company will win, you are investing in the growth of the entire US economy. It still wobbles day to day.</p>
+
+  <nav class="pagenav" aria-label="Section pages">
+    <a class="pagenav__link pagenav__link--prev" href="investing-low.html">
+      <span class="pagenav__dir">Previous</span>
+      <span class="pagenav__title">Low-risk investments</span></a>
+    <a class="pagenav__link pagenav__link--next" href="investing-high.html">
+      <span class="pagenav__dir">Next</span>
+      <span class="pagenav__title">High-risk &amp; speculation</span></a>
+  </nav>
+  </article>
+</div>
 </main>
   <footer class="site-footer">
     <div class="wrap">

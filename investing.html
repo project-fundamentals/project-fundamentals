@@ -1,346 +1,261 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Investing &amp; Growth — Project Fundamentals</title>
-  <meta name="description" content="What stocks, bonds, and crypto actually are, and how risk and return trade off against each other — from government-backed bonds to meme coins.">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Investing &amp; Growth — Project Fundamentals</title>
+<meta name="description" content="What your options actually are, sorted by how much risk each one carries — from government-backed bonds all the way down to meme coins.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/png" href="logo.png">
 </head>
 <body class="page--investing">
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <!-- ===== Nav bar ===== -->
-  <header class="site-header">
+<a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="siteHeader">
     <nav class="nav" aria-label="Primary">
-      <a class="nav__logo" href="index.html">Project Fundamentals</a>
+      <a class="nav__logo" href="index.html">
+        <span class="nav__logo-mark" aria-hidden="true">
+          <img src="logo.png" alt="" width="30" height="30">
+        </span>
+        Project Fundamentals
+      </a>
 
-      <button
-        class="nav__toggle"
-        id="navToggle"
-        type="button"
-        aria-expanded="false"
-        aria-controls="navMenu"
-        aria-label="Menu">
+      <button class="nav__toggle" id="navToggle" type="button"
+              aria-expanded="false" aria-controls="navMenu" aria-label="Menu">
         <span class="nav__toggle-bar" aria-hidden="true"></span>
         <span class="nav__toggle-bar" aria-hidden="true"></span>
         <span class="nav__toggle-bar" aria-hidden="true"></span>
       </button>
 
       <ul class="nav__menu" id="navMenu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="spending.html">Spending</a></li>
-        <li><a href="investing.html" aria-current="page">Investing</a></li>
-        <li><a href="banking.html">Banking</a></li>
-        <li><a href="about.html">About</a></li>
+        <li class="nav__item"><a href="index.html">Home</a></li>
+        <li class="nav__item nav__item--has-panel">
+          <button class="nav__trigger" type="button" aria-expanded="false" aria-controls="panel-spending">
+            Spending<span class="nav__chevron" aria-hidden="true"></span>
+          </button>
+          <div class="megamenu megamenu--spending" id="panel-spending" hidden>
+            <div class="megamenu__inner">
+              <div class="megamenu__lead">
+                <p class="megamenu__eyebrow">Spending &amp; Clickbait</p>
+                <p class="megamenu__blurb">The saving side of the equation.</p>
+                <a class="megamenu__overview" href="spending.html">Section overview</a>
+              </div>
+              <ul class="megamenu__links">
+            <li><a href="spending-why.html">
+              <span class="megamenu__link-title">Why we overspend</span>
+              <span class="megamenu__link-desc">Impulse buying, instant gratification, and social pressure.</span>
+            </a></li>
+            <li><a href="spending-digital.html">
+              <span class="megamenu__link-title">Why tapping doesn&#x27;t feel like spending</span>
+              <span class="megamenu__link-desc">Digital payments and the disappearing pain of paying.</span>
+            </a></li>
+            <li><a href="spending-clickbait.html">
+              <span class="megamenu__link-title">Clickbait &amp; marketing tactics</span>
+              <span class="megamenu__link-desc">How ads and trends are engineered to bypass your judgment.</span>
+            </a></li>
+            <li><a href="spending-scams.html">
+              <span class="megamenu__link-title">Scams &amp; &#x27;too good to be true&#x27;</span>
+              <span class="megamenu__link-desc">Youth-targeted schemes, and the red flags that give them away.</span>
+            </a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li class="nav__item nav__item--has-panel" data-active="true">
+          <button class="nav__trigger" type="button" aria-expanded="false" aria-controls="panel-investing">
+            Investing<span class="nav__chevron" aria-hidden="true"></span>
+          </button>
+          <div class="megamenu megamenu--investing" id="panel-investing" hidden>
+            <div class="megamenu__inner">
+              <div class="megamenu__lead">
+                <p class="megamenu__eyebrow">Investing &amp; Growth</p>
+                <p class="megamenu__blurb">The growth side of the equation.</p>
+                <a class="megamenu__overview" href="investing.html">Section overview</a>
+              </div>
+              <ul class="megamenu__links">
+            <li><a href="investing-basics.html">
+              <span class="megamenu__link-title">What investing actually is</span>
+              <span class="megamenu__link-desc">Risk versus return, and why saving alone isn&#x27;t enough.</span>
+            </a></li>
+            <li><a href="investing-low.html">
+              <span class="megamenu__link-title">Low-risk investments</span>
+              <span class="megamenu__link-desc">SSBs, fixed deposits and T-bills. Safe and steady.</span>
+            </a></li>
+            <li><a href="investing-medium.html">
+              <span class="megamenu__link-title">Medium-risk investments</span>
+              <span class="megamenu__link-desc">Blue-chip stocks, ETFs and index funds. Market growth.</span>
+            </a></li>
+            <li><a href="investing-high.html">
+              <span class="megamenu__link-title">High-risk &amp; speculation</span>
+              <span class="megamenu__link-desc">Crypto, meme coins and loot boxes. The danger zone.</span>
+            </a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li class="nav__item nav__item--has-panel">
+          <button class="nav__trigger" type="button" aria-expanded="false" aria-controls="panel-banking">
+            Banking<span class="nav__chevron" aria-hidden="true"></span>
+          </button>
+          <div class="megamenu megamenu--banking" id="panel-banking" hidden>
+            <div class="megamenu__inner">
+              <div class="megamenu__lead">
+                <p class="megamenu__eyebrow">Banking &amp; Payments</p>
+                <p class="megamenu__blurb">The system your money moves through.</p>
+                <a class="megamenu__overview" href="banking.html">Section overview</a>
+              </div>
+              <ul class="megamenu__links">
+            <li><a href="banking-how.html">
+              <span class="megamenu__link-title">How banks actually work</span>
+              <span class="megamenu__link-desc">Where a bank&#x27;s profit really comes from.</span>
+            </a></li>
+            <li><a href="banking-payments.html">
+              <span class="megamenu__link-title">Digital payments &amp; e-wallets</span>
+              <span class="megamenu__link-desc">Convenience, and what it costs you in awareness.</span>
+            </a></li>
+            <li><a href="banking-credit.html">
+              <span class="megamenu__link-title">Credit cards &amp; the debt trap</span>
+              <span class="megamenu__link-desc">Compound interest and the minimum payment trap.</span>
+            </a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li class="nav__item"><a href="about.html">About</a></li>
       </ul>
     </nav>
   </header>
+<main id="main">
+<nav class="breadcrumb" aria-label="Breadcrumb"><div class="wrap"><ol>
+  <li><a href="index.html">Home</a></li>
+  <li aria-current="page">Investing</li>
+</ol></div></nav>
+<section class="page-hero gridbg">
+  <div class="wrap">
+    <p class="page-hero__eyebrow">Investing &amp; Growth</p>
+    <h1 class="page-hero__headline">The growth side of the equation.</h1>
+    <p class="page-hero__sub">What your options actually are, sorted by how much risk each one carries — from government-backed bonds all the way down to meme coins.</p>
+  </div>
+</section>
 
-  <main id="main">
-
-    <!-- ===== 1. Page intro ===== -->
-    <section class="page-hero">
-      <div class="wrap">
-        <p class="page-hero__eyebrow">Investing &amp; Growth</p>
-        <h1 class="page-hero__headline">Every investment trades safety for growth.</h1>
-        <p class="page-hero__sub">Investing is about growing money over time instead of just letting it sit. The catch is simple: the higher the potential return, the higher the chance you lose money. Here's what that trade-off actually looks like.</p>
-      </div>
-    </section>
-
-    <!-- ===== 2. Risk dial ===== -->
-    <section class="section" aria-labelledby="dial-heading">
-      <div class="wrap">
-        <h2 class="section-heading section-heading--accent" id="dial-heading">The risk and return trade-off</h2>
-        <p class="section-body">Drag the dial to see what changes as you move from safety toward speculation. Nothing here is a recommendation — it's a map of the landscape.</p>
-
-        <div class="dial">
-          <div class="dial__control">
-            <label for="riskDial">Risk level</label>
-            <input type="range" id="riskDial" min="0" max="2" step="1" value="0"
-                   aria-describedby="dialTier">
-            <div class="dial__scale" aria-hidden="true">
-              <span>Low</span>
-              <span>Medium</span>
-              <span>High</span>
-            </div>
-          </div>
-
-          <div class="dial__readout" role="status" aria-live="polite">
-            <p class="dial__tier" id="dialTier">Low risk</p>
-            <dl class="dial__facts">
-              <div class="dial__fact">
-                <dt>Typical return</dt>
-                <dd id="dialReturn">Low but stable</dd>
-              </div>
-              <div class="dial__fact">
-                <dt>Chance of loss</dt>
-                <dd id="dialLoss">Very low — capital protected</dd>
-              </div>
-              <div class="dial__fact">
-                <dt>Examples</dt>
-                <dd id="dialExamples">SSBs, fixed deposits, T-bills</dd>
-              </div>
-            </dl>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== 3. Low risk ===== -->
-    <section class="section section--alt" aria-labelledby="low-heading">
-      <div class="wrap">
-        <p class="tier-label tier-label--low">Category 1 — Safe &amp; steady</p>
-        <h2 class="section-heading section-heading--accent" id="low-heading">Low-risk investments</h2>
-
-        <div class="accordion">
-          <details class="accordion__item">
-            <summary class="accordion__summary">
-              <span class="accordion__summary-text">
-                <span class="accordion__title">Singapore Savings Bonds (SSBs)</span>
-                <span class="accordion__teaser">100% backed by the SG government.</span>
-              </span>
-              <span class="accordion__icon" aria-hidden="true"></span>
-            </summary>
-            <div class="accordion__body">
-              <p><strong>What it is:</strong> A long-term bond fully backed by the Singapore Government, meaning your initial capital is completely safe.</p>
-              <p><strong>How it works:</strong> You lend money to the government, and they pay you interest every 6 months. The longer you hold the bond (up to 10 years), the higher the interest rate becomes.</p>
-              <p class="reality"><strong>Reality check:</strong> You can withdraw your money in any given month with no penalty, but the returns are modest compared to riskier options. Minimum investment is $500.</p>
-              <p class="didyouknow">Even if the stock market crashes tomorrow, your SSB money is completely untouched and guaranteed by law.</p>
-              <p class="takeaway">Great for saving up for big future goals — like a university fund — without risking your pocket money.</p>
-            </div>
-          </details>
-
-          <details class="accordion__item">
-            <summary class="accordion__summary">
-              <span class="accordion__summary-text">
-                <span class="accordion__title">Fixed deposits</span>
-                <span class="accordion__teaser">Guaranteed returns, zero surprises.</span>
-              </span>
-              <span class="accordion__icon" aria-hidden="true"></span>
-            </summary>
-            <div class="accordion__body">
-              <p><strong>What it is:</strong> An arrangement with a bank where you lock away a specific sum for a fixed period (e.g. 6 months, 1 year) at a guaranteed interest rate.</p>
-              <p><strong>How it works:</strong> The bank rewards you with a higher interest rate than a regular savings account because you promise not to touch that money until the maturity date.</p>
-              <p class="reality"><strong>Reality check:</strong> If you withdraw early due to an emergency, you lose most or all of the accumulated interest. Ideal only for money you're certain you won't need soon.</p>
-              <p class="didyouknow">Banks pay higher interest here because you're making a promise not to touch that cash for a set period — it's a pact between you and the bank.</p>
-              <p class="takeaway">Use this for money you know you won't need for school expenses or outings over the next year.</p>
-            </div>
-          </details>
-
-          <details class="accordion__item">
-            <summary class="accordion__summary">
-              <span class="accordion__summary-text">
-                <span class="accordion__title">Treasury bills (T-bills)</span>
-                <span class="accordion__teaser">Short-term safety net.</span>
-              </span>
-              <span class="accordion__icon" aria-hidden="true"></span>
-            </summary>
-            <div class="accordion__body">
-              <p><strong>What it is:</strong> Short-term government debt issued by the Monetary Authority of Singapore (MAS), maturing in either 6 months or 1 year.</p>
-              <p><strong>How it works:</strong> They're bought at a discount. You might pay $980 upfront, and when the bill matures the government pays back the full $1,000 — the $20 difference is your profit.</p>
-
-              <ol class="flow" aria-label="How a T-bill works">
-                <li class="flow__step"><span class="flow__num">1</span> You buy the bill at a discount — e.g. <strong>$980</strong></li>
-                <li class="flow__step"><span class="flow__num">2</span> You wait <strong>6 or 12 months</strong></li>
-                <li class="flow__step"><span class="flow__num">3</span> Government pays back face value — <strong>$1,000</strong></li>
-              </ol>
-
-              <p class="reality"><strong>Reality check:</strong> Your money is locked for the full duration, and the minimum investment is $1,000 — a high barrier on secondary school pocket money.</p>
-              <p class="didyouknow">T-bills don't pay regular interest payouts. Your profit is baked right into the discount price you pay on day one.</p>
-              <p class="takeaway">Highly secure, but with a $1,000 entry it's a goal to save toward rather than something you buy with one week's allowance.</p>
-            </div>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== 4. Medium risk ===== -->
-    <section class="section" aria-labelledby="med-heading">
-      <div class="wrap">
-        <p class="tier-label tier-label--medium">Category 2 — Market growth</p>
-        <h2 class="section-heading section-heading--accent" id="med-heading">Medium-risk investments</h2>
-
-        <div class="accordion">
-          <details class="accordion__item">
-            <summary class="accordion__summary">
-              <span class="accordion__summary-text">
-                <span class="accordion__title">Blue-chip stocks</span>
-                <span class="accordion__teaser">Own a piece of a giant.</span>
-              </span>
-              <span class="accordion__icon" aria-hidden="true"></span>
-            </summary>
-            <div class="accordion__body">
-              <p><strong>What it is:</strong> Shares of ownership in large, well-established, financially stable companies with a history of reliable performance — think Singtel, DBS, or Apple.</p>
-              <p><strong>How it works:</strong> When you buy a stock you own a tiny piece of the company. If it makes a profit and grows, your stock value goes up, and it may share profits with you through dividends.</p>
-              <p class="reality"><strong>Reality check:</strong> Prices fluctuate daily on market news, company earnings, and the economy. Safer than small startup stocks, but you can still lose money if the company hits structural problems.</p>
-              <p class="didyouknow">When these giant companies make huge profits, they often distribute a portion of that cash directly back to shareholders. Those are dividends.</p>
-              <p class="takeaway">Daily prices will wobble, but these companies have strong foundations to survive economic storms over the long haul.</p>
-            </div>
-          </details>
-
-          <details class="accordion__item">
-            <summary class="accordion__summary">
-              <span class="accordion__summary-text">
-                <span class="accordion__title">Exchange-traded funds (ETFs)</span>
-                <span class="accordion__teaser">Don't put all your eggs in one basket.</span>
-              </span>
-              <span class="accordion__icon" aria-hidden="true"></span>
-            </summary>
-            <div class="accordion__body">
-              <p><strong>What it is:</strong> A basket of different stocks bundled into a single fund that trades on the stock market, letting you buy into hundreds of companies at once.</p>
-              <p><strong>How it works:</strong> Instead of putting all your money into one company, an ETF spreads it across many — like the top 30 companies in Singapore, or the top 500 in the US. That's called diversification.</p>
-
-              <div class="basket">
-                <p class="basket__caption">One company crashes. The basket holds.</p>
-                <ul class="basket__grid" aria-label="Diversification example: one falling stock among many stable ones">
-                  <li class="basket__item basket__item--down"><span aria-hidden="true">▼</span><span class="visually-hidden">Falling</span></li>
-                  <li class="basket__item"></li>
-                  <li class="basket__item"></li>
-                  <li class="basket__item"></li>
-                  <li class="basket__item"></li>
-                  <li class="basket__item"></li>
-                  <li class="basket__item"></li>
-                  <li class="basket__item"></li>
-                  <li class="basket__item"></li>
-                  <li class="basket__item"></li>
-                </ul>
-              </div>
-
-              <p class="reality"><strong>Reality check:</strong> Diversification protects you from a single company going bankrupt — it does <em>not</em> protect you from a general market crash. If the whole market drops, your ETF drops too.</p>
-              <p class="didyouknow">Buying an ETF is like ordering a sampler platter instead of committing to one dish. It instantly diversifies your risk.</p>
-              <p class="takeaway">The closest thing to a "set-and-forget" market option for beginners who don't want to track individual company news.</p>
-            </div>
-          </details>
-
-          <details class="accordion__item">
-            <summary class="accordion__summary">
-              <span class="accordion__summary-text">
-                <span class="accordion__title">S&amp;P 500 index funds</span>
-                <span class="accordion__teaser">The standard benchmark for market growth.</span>
-              </span>
-              <span class="accordion__icon" aria-hidden="true"></span>
-            </summary>
-            <div class="accordion__body">
-              <p><strong>What it is:</strong> A fund tracking the 500 largest publicly traded corporations in America — spread across tech, healthcare, finance, and retail.</p>
-              <p><strong>How it works:</strong> A single investment is instantly divided into fractional pieces of 500 different massive companies, rather than betting on any one of them.</p>
-              <p class="didyouknow">Historically the S&amp;P 500 has been considered one of the best benchmarks for long-term wealth creation, averaging around 10% per year over many decades. Past performance doesn't guarantee future results.</p>
-              <p class="takeaway">Instead of guessing which individual company will win, you're investing in the growth of the entire US economy. It still wobbles day to day.</p>
-            </div>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== 5. High risk ===== -->
-    <section class="section section--alt" aria-labelledby="high-heading">
-      <div class="wrap">
-        <p class="tier-label tier-label--high">Category 3 — Speculative danger zone</p>
-        <h2 class="section-heading section-heading--accent" id="high-heading">High-to-extreme risk</h2>
-        <p class="section-body">This is where investing starts blurring into gambling. Everything below can lose 100% of its value — treat this section as a warning label, not a shopping list.</p>
-
-        <div class="accordion">
-          <details class="accordion__item accordion__item--danger">
-            <summary class="accordion__summary">
-              <span class="accordion__summary-text">
-                <span class="accordion__title">Cryptocurrency</span>
-                <span class="accordion__teaser">Extreme volatility alert.</span>
-              </span>
-              <span class="accordion__icon" aria-hidden="true"></span>
-            </summary>
-            <div class="accordion__body">
-              <p><strong>What it is:</strong> Decentralised digital tokens secured by cryptography, operating independently of traditional banks or governments.</p>
-              <p><strong>How it works:</strong> Prices are driven purely by public demand, media attention, and sentiment. Unlike companies, cryptocurrencies do not generate physical products, revenues, or profits.</p>
-
-              <div class="tchart">
-                <div class="tchart__col tchart__col--hype">
-                  <h4 class="tchart__title">The hype</h4>
-                  <p>"To the moon! Overnight millionaire!"</p>
-                </div>
-                <div class="tchart__col tchart__col--reality">
-                  <h4 class="tchart__title">The reality</h4>
-                  <p>No underlying physical assets, no guaranteed value, can drop 40% in two hours.</p>
-                </div>
-              </div>
-
-              <p class="reality"><strong>Reality check:</strong> Highly speculative and volatile. Prices can crash 30–50% in a single day on a social media post or regulatory change. There is an exceptionally high chance of losing your entire investment.</p>
-              <p class="didyouknow">Crypto tokens don't make products or earn profits. Their price depends entirely on whether the next person will pay more for it than you did.</p>
-              <p class="takeaway">Treat with extreme caution. Never put in a single dollar you aren't completely prepared to watch disappear.</p>
-            </div>
-          </details>
-
-          <details class="accordion__item accordion__item--danger">
-            <summary class="accordion__summary">
-              <span class="accordion__summary-text">
-                <span class="accordion__title">Meme coins &amp; trend tokens</span>
-                <span class="accordion__teaser">99% hype, 1% substance.</span>
-              </span>
-              <span class="accordion__icon" aria-hidden="true"></span>
-            </summary>
-            <div class="accordion__body">
-              <p><strong>What it is:</strong> Cryptocurrencies created purely as internet jokes or cultural memes — Dogecoin being the best-known — that see massive spikes in trading activity.</p>
-              <p><strong>How it works:</strong> Value depends almost entirely on internet hype, viral trends, and celebrity endorsements. People buy hoping to sell to someone else at a higher price before the hype dies.</p>
-
-              <ol class="lifecycle" aria-label="Life cycle of a hype token">
-                <li class="lifecycle__step"><span class="lifecycle__num">1</span> Influencer tweets about a coin</li>
-                <li class="lifecycle__step"><span class="lifecycle__num">2</span> Price skyrockets from FOMO</li>
-                <li class="lifecycle__step"><span class="lifecycle__num">3</span> Early creators sell everything</li>
-                <li class="lifecycle__step lifecycle__step--trap"><span class="lifecycle__num">4</span> Price crashes to zero <strong class="lifecycle__flag">The trap</strong></li>
-              </ol>
-
-              <p class="reality"><strong>Reality check:</strong> This behaves identically to gambling, not investing. When the hype fades the value often falls to zero permanently, trapping late buyers with heavy losses.</p>
-              <p class="didyouknow">Thousands of meme coins are created every single day. The vast majority lose 100% of their value within the first week.</p>
-              <p class="takeaway">This isn't investing — it's digital gambling wrapped in a funny internet joke. Stay far away.</p>
-            </div>
-          </details>
-
-          <details class="accordion__item accordion__item--danger">
-            <summary class="accordion__summary">
-              <span class="accordion__summary-text">
-                <span class="accordion__title">In-game assets &amp; loot boxes</span>
-                <span class="accordion__teaser">The sunk-cost psychology trap.</span>
-              </span>
-              <span class="accordion__icon" aria-hidden="true"></span>
-            </summary>
-            <div class="accordion__body">
-              <p><strong>What it is:</strong> Spending real money on virtual mystery boxes or digital cosmetics — skins, characters — where the outcome is entirely randomised.</p>
-              <p><strong>How it works:</strong> Players purchase a <em>chance</em> to win rare digital items. Because some items are sought after by other players, a speculative virtual marketplace forms around trading them.</p>
-              <p class="reality"><strong>Reality check:</strong> This triggers the exact spending psychology traps covered elsewhere on this site. The odds are stacked against the player, the real money spent is immediately gone, and the digital assets hold zero financial value outside that game's servers.</p>
-              <p class="didyouknow">Loot boxes use the same psychological algorithms as real-world casino slot machines to trigger impulse spending.</p>
-              <p class="takeaway">Enjoy games for fun, but never treat buying randomised virtual crates as a financial investment.</p>
-            </div>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== 6. Closing CTA ===== -->
-    <section class="cta-band">
-      <div class="wrap cta-band__inner">
-        <p class="cta-band__text">The same urgency and hype that drives meme coins also drives everyday spending decisions.</p>
-        <a class="btn" href="spending.html">Explore Spending Psychology &amp; Clickbait</a>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ===== Footer ===== -->
+<section class="section">
+  <div class="wrap">
+    <div class="banner" aria-hidden="true">
+      <svg class="banner__svg" viewBox="0 0 640 150" preserveAspectRatio="xMidYMid slice">
+        <rect width="640" height="150" fill="var(--bg2)"/>
+        <!-- SG skyline silhouette -->
+        <g fill="var(--bg4)">
+          <rect x="30" y="70" width="26" height="80"/>
+          <rect x="64" y="52" width="20" height="98"/>
+          <rect x="92" y="84" width="30" height="66"/>
+          <rect x="130" y="40" width="22" height="110"/>
+          <rect x="160" y="64" width="26" height="86"/>
+          <!-- MBS-style three towers + deck -->
+          <rect x="220" y="58" width="16" height="92"/>
+          <rect x="242" y="58" width="16" height="92"/>
+          <rect x="264" y="58" width="16" height="92"/>
+          <path d="M212 58 q40 -18 76 0 l-4 10 q-34 -15 -68 0 z"/>
+        </g>
+        <!-- rising chart -->
+        <polyline points="330,120 400,96 450,104 510,62 580,38" fill="none" stroke="var(--accent)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M580 38 l-16 2 m16 -2 l-4 15" stroke="var(--accent)" stroke-width="4" stroke-linecap="round" fill="none"/>
+        <circle cx="400" cy="96" r="5" fill="var(--accent)"/>
+        <circle cx="450" cy="104" r="5" fill="var(--accent)"/>
+        <circle cx="510" cy="62" r="5" fill="var(--accent)"/>
+        <!-- coin stacks -->
+        <g stroke="var(--amber)" stroke-width="2.5" fill="var(--sky4)">
+          <ellipse cx="370" cy="140" rx="16" ry="5"/>
+          <ellipse cx="370" cy="132" rx="16" ry="5"/>
+          <ellipse cx="440" cy="140" rx="16" ry="5"/>
+          <ellipse cx="440" cy="132" rx="16" ry="5"/>
+          <ellipse cx="440" cy="124" rx="16" ry="5"/>
+          <ellipse cx="510" cy="140" rx="16" ry="5"/>
+          <ellipse cx="510" cy="132" rx="16" ry="5"/>
+          <ellipse cx="510" cy="124" rx="16" ry="5"/>
+          <ellipse cx="510" cy="116" rx="16" ry="5"/>
+        </g>
+      </svg>
+    </div>
+    <h2 class="section-heading section-heading--accent">Pages in this section</h2>
+    <ol class="hubgrid">
+      <li class="hubcard">
+        <a class="hubcard__link" href="investing-basics.html">
+          <span class="hubcard__num">01</span>
+          <h2 class="hubcard__title">What investing actually is</h2>
+          <p class="hubcard__desc">Risk versus return, and why saving alone isn&#x27;t enough.</p>
+          <span class="hubcard__go" aria-hidden="true">Read →</span>
+        </a>
+      </li>
+      <li class="hubcard">
+        <a class="hubcard__link" href="investing-low.html">
+          <span class="hubcard__num">02</span>
+          <h2 class="hubcard__title">Low-risk investments</h2>
+          <p class="hubcard__desc">SSBs, fixed deposits and T-bills. Safe and steady.</p>
+          <span class="hubcard__go" aria-hidden="true">Read →</span>
+        </a>
+      </li>
+      <li class="hubcard">
+        <a class="hubcard__link" href="investing-medium.html">
+          <span class="hubcard__num">03</span>
+          <h2 class="hubcard__title">Medium-risk investments</h2>
+          <p class="hubcard__desc">Blue-chip stocks, ETFs and index funds. Market growth.</p>
+          <span class="hubcard__go" aria-hidden="true">Read →</span>
+        </a>
+      </li>
+      <li class="hubcard">
+        <a class="hubcard__link" href="investing-high.html">
+          <span class="hubcard__num">04</span>
+          <h2 class="hubcard__title">High-risk &amp; speculation</h2>
+          <p class="hubcard__desc">Crypto, meme coins and loot boxes. The danger zone.</p>
+          <span class="hubcard__go" aria-hidden="true">Read →</span>
+        </a>
+      </li>
+    </ol>
+  </div>
+</section>
+</main>
   <footer class="site-footer">
-    <div class="wrap site-footer__inner">
-      <p class="site-footer__cred">Project Fundamentals — a Project Work resource, 2026</p>
-
-      <nav class="site-footer__nav" aria-label="Footer">
+    <div class="wrap">
+      <div class="site-footer__grid">
+      <div class="site-footer__col">
+        <p class="site-footer__coltitle"><a href="spending.html">Spending &amp; Clickbait</a></p>
         <ul>
-          <li><a href="spending.html">Spending</a></li>
-          <li><a href="investing.html">Investing</a></li>
-          <li><a href="banking.html">Banking</a></li>
-          <li><a href="about.html">About</a></li>
+          <li><a href="spending-why.html">Why we overspend</a></li>
+          <li><a href="spending-digital.html">Why tapping doesn&#x27;t feel like spending</a></li>
+          <li><a href="spending-clickbait.html">Clickbait &amp; marketing tactics</a></li>
+          <li><a href="spending-scams.html">Scams &amp; &#x27;too good to be true&#x27;</a></li>
         </ul>
+      </div>
+      <div class="site-footer__col">
+        <p class="site-footer__coltitle"><a href="investing.html">Investing &amp; Growth</a></p>
+        <ul>
+          <li><a href="investing-basics.html">What investing actually is</a></li>
+          <li><a href="investing-low.html">Low-risk investments</a></li>
+          <li><a href="investing-medium.html">Medium-risk investments</a></li>
+          <li><a href="investing-high.html">High-risk &amp; speculation</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__col">
+        <p class="site-footer__coltitle"><a href="banking.html">Banking &amp; Payments</a></p>
+        <ul>
+          <li><a href="banking-how.html">How banks actually work</a></li>
+          <li><a href="banking-payments.html">Digital payments &amp; e-wallets</a></li>
+          <li><a href="banking-credit.html">Credit cards &amp; the debt trap</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__col">
+        <p class="site-footer__coltitle"><a href="about.html">About</a></p>
+        <ul>
+          <li><a href="about.html">Our research</a></li>
+          <li><a href="https://www.instagram.com/project.fundamentals/" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+      </div>
+
+      <div class="site-footer__base">
+        <p class="site-footer__cred">Project Fundamentals — a Project Work resource, 2026</p>
         <a class="site-footer__ig" href="https://www.instagram.com/project.fundamentals/" aria-label="Project Fundamentals on Instagram" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" focusable="false">
             <rect x="3" y="3" width="18" height="18" rx="5"></rect>
@@ -348,10 +263,10 @@
             <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"></circle>
           </svg>
         </a>
-      </nav>
+        <p class="site-footer__credit">Site design adapted from the <a href="https://templatemo.com" target="_blank" rel="noopener">NovaPay template by TemplateMo</a>, used under the CC BY 3.0 licence. All content, structure and interactive features are our own.</p>
+      </div>
     </div>
   </footer>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

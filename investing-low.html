@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Banking &amp; Payments — Project Fundamentals</title>
-<meta name="description" content="How banks actually make money, what happens when you tap to pay, and how credit card debt quietly compounds behind the scenes.">
+<title>Low-risk investments — Project Fundamentals</title>
+<meta name="description" content="SSBs, fixed deposits and T-bills. Safe and steady.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <link rel="icon" type="image/png" href="logo.png">
 </head>
-<body class="page--banking">
+<body class="page--investing">
 <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header" id="siteHeader">
     <nav class="nav" aria-label="Primary">
@@ -63,7 +63,7 @@
             </div>
           </div>
         </li>
-        <li class="nav__item nav__item--has-panel">
+        <li class="nav__item nav__item--has-panel" data-active="true">
           <button class="nav__trigger" type="button" aria-expanded="false" aria-controls="panel-investing">
             Investing<span class="nav__chevron" aria-hidden="true"></span>
           </button>
@@ -95,7 +95,7 @@
             </div>
           </div>
         </li>
-        <li class="nav__item nav__item--has-panel" data-active="true">
+        <li class="nav__item nav__item--has-panel">
           <button class="nav__trigger" type="button" aria-expanded="false" aria-controls="panel-banking">
             Banking<span class="nav__chevron" aria-hidden="true"></span>
           </button>
@@ -130,85 +130,116 @@
 <main id="main">
 <nav class="breadcrumb" aria-label="Breadcrumb"><div class="wrap"><ol>
   <li><a href="index.html">Home</a></li>
-  <li aria-current="page">Banking</li>
+  <li><a href="investing.html">Investing</a></li>
+  <li aria-current="page">Low-risk investments</li>
 </ol></div></nav>
-<section class="page-hero gridbg">
-  <div class="wrap">
-    <p class="page-hero__eyebrow">Banking &amp; Payments</p>
-    <h1 class="page-hero__headline">The system your money moves through.</h1>
-    <p class="page-hero__sub">How banks actually make money, what happens when you tap to pay, and how credit card debt quietly compounds behind the scenes.</p>
-  </div>
-</section>
-
-<section class="section">
-  <div class="wrap">
+<div class="layout wrap">
+  <aside class="sidebar" aria-labelledby="sidebar-heading">
+    <p class="sidebar__heading" id="sidebar-heading">In this section</p>
+    <ul class="sidebar__list">
+      <li><a href="investing.html">Overview</a></li>
+      <li><a href="investing-basics.html">What investing actually is</a></li>
+      <li><a href="investing-low.html" aria-current="page">Low-risk investments</a></li>
+      <li><a href="investing-medium.html">Medium-risk investments</a></li>
+      <li><a href="investing-high.html">High-risk &amp; speculation</a></li>
+    </ul>
+  </aside>
+  <article class="article">
+    <p class="article__eyebrow">Investing</p>
+    <h1 class="article__title">Low-risk investments</h1>
+    <p class="article__lede">SSBs, fixed deposits and T-bills. Safe and steady.</p>
     <div class="banner" aria-hidden="true">
       <svg class="banner__svg" viewBox="0 0 640 150" preserveAspectRatio="xMidYMid slice">
         <rect width="640" height="150" fill="var(--bg2)"/>
-        <!-- bank -->
-        <g transform="translate(48,30)">
-          <path d="M0 34 L57 6 L114 34 Z" fill="var(--bg)" stroke="var(--text2)" stroke-width="2.5" stroke-linejoin="round"/>
-          <rect x="8" y="34" width="98" height="48" fill="var(--bg)" stroke="var(--text2)" stroke-width="2.5"/>
-          <line x1="28" y1="40" x2="28" y2="76" stroke="var(--text2)" stroke-width="2.5"/>
-          <line x1="57" y1="40" x2="57" y2="76" stroke="var(--text2)" stroke-width="2.5"/>
-          <line x1="86" y1="40" x2="86" y2="76" stroke="var(--text2)" stroke-width="2.5"/>
-          <rect x="0" y="82" width="114" height="9" fill="var(--bg)" stroke="var(--text2)" stroke-width="2.5"/>
-          <text x="57" y="28" text-anchor="middle" font-size="11" font-weight="800" fill="var(--accent)">$</text>
+        <!-- SG skyline silhouette -->
+        <g fill="var(--bg4)">
+          <rect x="30" y="70" width="26" height="80"/>
+          <rect x="64" y="52" width="20" height="98"/>
+          <rect x="92" y="84" width="30" height="66"/>
+          <rect x="130" y="40" width="22" height="110"/>
+          <rect x="160" y="64" width="26" height="86"/>
+          <!-- MBS-style three towers + deck -->
+          <rect x="220" y="58" width="16" height="92"/>
+          <rect x="242" y="58" width="16" height="92"/>
+          <rect x="264" y="58" width="16" height="92"/>
+          <path d="M212 58 q40 -18 76 0 l-4 10 q-34 -15 -68 0 z"/>
         </g>
-        <!-- MRT gantry with tap -->
-        <g transform="translate(250,34)">
-          <rect x="0" y="0" width="16" height="96" rx="4" fill="var(--bg3)" stroke="var(--text2)" stroke-width="2.5"/>
-          <rect x="96" y="0" width="16" height="96" rx="4" fill="var(--bg3)" stroke="var(--text2)" stroke-width="2.5"/>
-          <rect x="10" y="34" width="44 " height="10" rx="5" fill="var(--sky4)" stroke="var(--accent)" stroke-width="2"/>
-          <rect x="58" y="34" width="44" height="10" rx="5" fill="var(--sky4)" stroke="var(--accent)" stroke-width="2"/>
-          <rect x="-4" y="6" width="24" height="14" rx="4" fill="var(--sky4)" stroke="var(--accent)" stroke-width="2"/>
-          <path d="M26 2 a12 12 0 0 1 0 20 M33 -4 a20 20 0 0 1 0 32" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/>
-          <text x="56" y="118" text-anchor="middle" font-size="10" fill="var(--text2)">tap in · tap out</text>
-        </g>
-        <!-- card + phone pay -->
-        <g transform="translate(440,42)">
-          <rect x="0" y="8" width="82" height="52" rx="9" fill="var(--bg)" stroke="var(--text2)" stroke-width="2.5"/>
-          <rect x="0" y="17" width="82" height="11" fill="var(--text2)" opacity=".3"/>
-          <rect x="8" y="38" width="22" height="14" rx="3" fill="var(--sky4)" stroke="var(--amber)" stroke-width="1.5"/>
-          <g transform="translate(104,-6)">
-            <rect x="0" y="0" width="46" height="78" rx="10" fill="var(--bg)" stroke="var(--text2)" stroke-width="2.5"/>
-            <rect x="6" y="8" width="34" height="50" rx="3" fill="var(--bg3)"/>
-            <rect x="11" y="16" width="24" height="12" rx="3" fill="var(--sky4)" stroke="var(--accent)" stroke-width="1.5"/>
-            <text x="23" y="25" text-anchor="middle" font-size="7" font-weight="700" fill="var(--accent)">PAID</text>
-            <circle cx="23" cy="66" r="4" fill="none" stroke="var(--text2)" stroke-width="2"/>
-          </g>
+        <!-- rising chart -->
+        <polyline points="330,120 400,96 450,104 510,62 580,38" fill="none" stroke="var(--accent)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M580 38 l-16 2 m16 -2 l-4 15" stroke="var(--accent)" stroke-width="4" stroke-linecap="round" fill="none"/>
+        <circle cx="400" cy="96" r="5" fill="var(--accent)"/>
+        <circle cx="450" cy="104" r="5" fill="var(--accent)"/>
+        <circle cx="510" cy="62" r="5" fill="var(--accent)"/>
+        <!-- coin stacks -->
+        <g stroke="var(--amber)" stroke-width="2.5" fill="var(--sky4)">
+          <ellipse cx="370" cy="140" rx="16" ry="5"/>
+          <ellipse cx="370" cy="132" rx="16" ry="5"/>
+          <ellipse cx="440" cy="140" rx="16" ry="5"/>
+          <ellipse cx="440" cy="132" rx="16" ry="5"/>
+          <ellipse cx="440" cy="124" rx="16" ry="5"/>
+          <ellipse cx="510" cy="140" rx="16" ry="5"/>
+          <ellipse cx="510" cy="132" rx="16" ry="5"/>
+          <ellipse cx="510" cy="124" rx="16" ry="5"/>
+          <ellipse cx="510" cy="116" rx="16" ry="5"/>
         </g>
       </svg>
     </div>
-    <h2 class="section-heading section-heading--accent">Pages in this section</h2>
-    <ol class="hubgrid">
-      <li class="hubcard">
-        <a class="hubcard__link" href="banking-how.html">
-          <span class="hubcard__num">01</span>
-          <h2 class="hubcard__title">How banks actually work</h2>
-          <p class="hubcard__desc">Where a bank&#x27;s profit really comes from.</p>
-          <span class="hubcard__go" aria-hidden="true">Read →</span>
-        </a>
-      </li>
-      <li class="hubcard">
-        <a class="hubcard__link" href="banking-payments.html">
-          <span class="hubcard__num">02</span>
-          <h2 class="hubcard__title">Digital payments &amp; e-wallets</h2>
-          <p class="hubcard__desc">Convenience, and what it costs you in awareness.</p>
-          <span class="hubcard__go" aria-hidden="true">Read →</span>
-        </a>
-      </li>
-      <li class="hubcard">
-        <a class="hubcard__link" href="banking-credit.html">
-          <span class="hubcard__num">03</span>
-          <h2 class="hubcard__title">Credit cards &amp; the debt trap</h2>
-          <p class="hubcard__desc">Compound interest and the minimum payment trap.</p>
-          <span class="hubcard__go" aria-hidden="true">Read →</span>
-        </a>
-      </li>
+    <aside class="learn" aria-labelledby="learn-heading">
+      <p class="learn__heading" id="learn-heading">
+        <svg class="learn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 8l10 5 8-4v6h2V8L12 3z"/><path d="M6 11.5V15c0 1.7 2.7 3 6 3s6-1.3 6-3v-3.5l-6 3-6-3z"/></svg>
+        What you'll learn
+      </p>
+      <ul class="learn__list">
+      <li>How SSBs, fixed deposits and T-bills actually work</li>
+      <li>What &#x27;capital protected&#x27; really means — and what it costs you</li>
+      <li>Which option fits pocket-money-scale savings</li>
+      </ul>
+    </aside>
+
+    <p class="tier-label tier-label--low">Category 1 — Safe &amp; steady</p>
+    <p>These are the options where your capital is protected. Returns are modest, and that is the deal you are accepting in exchange for near-certainty.</p>
+
+    <h2>Singapore Savings Bonds (SSBs)</h2>
+    <p class="bigstat">100% backed by the SG Government</p>
+    <p><strong>What it is:</strong> A long-term bond fully backed by the Singapore Government, meaning your initial capital is completely safe.</p>
+    <p><strong>How it works:</strong> You lend money to the government, and they pay you interest every 6 months. The longer you hold the bond — up to 10 years — the higher the interest rate becomes.</p>
+    <p class="reality"><strong>Reality check:</strong> You can withdraw your money in any given month with no penalty, but the returns are modest compared to riskier options. Minimum investment is $500.</p>
+    <p class="didyouknow">Even if the stock market crashes tomorrow, your SSB money is completely untouched and guaranteed by law.</p>
+    <p class="takeaway">Great for saving up for big future goals — like a university fund — without risking your pocket money.</p>
+
+    <h2>Fixed deposits</h2>
+    <p class="bigstat">Guaranteed returns, zero surprises</p>
+    <p><strong>What it is:</strong> An arrangement with a bank where you lock away a specific sum for a fixed period — 6 months, a year — at a guaranteed interest rate.</p>
+    <p><strong>How it works:</strong> The bank rewards you with a higher interest rate than a regular savings account because you promise not to touch that money until the maturity date.</p>
+    <p class="reality"><strong>Reality check:</strong> If you withdraw early due to an emergency, you lose most or all of the accumulated interest. Ideal only for money you are certain you will not need soon.</p>
+    <p class="didyouknow">Banks pay higher interest here because you are making a promise not to touch that cash for a set period. It is a pact between you and the bank.</p>
+    <p class="takeaway">Use this for money you know you will not need for school expenses or outings over the next year.</p>
+
+    <h2>Treasury bills (T-bills)</h2>
+    <p class="bigstat">Short-term safety net</p>
+    <p><strong>What it is:</strong> Short-term government debt issued by the Monetary Authority of Singapore (MAS), maturing in either 6 months or 1 year.</p>
+    <p><strong>How it works:</strong> They are bought at a discount rather than paying regular interest.</p>
+
+    <ol class="flow" aria-label="How a T-bill works">
+      <li class="flow__step"><span class="flow__num">1</span> You buy the bill at a discount — e.g. <strong>$980</strong></li>
+      <li class="flow__step"><span class="flow__num">2</span> You wait <strong>6 or 12 months</strong></li>
+      <li class="flow__step"><span class="flow__num">3</span> Government pays back face value — <strong>$1,000</strong></li>
     </ol>
-  </div>
-</section>
+
+    <p class="reality"><strong>Reality check:</strong> Your money is locked for the full duration, and the minimum investment is $1,000 — a high barrier on secondary school pocket money.</p>
+    <p class="didyouknow">T-bills do not pay regular interest payouts. Your profit is baked right into the discount price you pay on day one.</p>
+    <p class="takeaway">Highly secure, but with a $1,000 entry it is a goal to save toward rather than something you buy with one week's allowance.</p>
+
+  <nav class="pagenav" aria-label="Section pages">
+    <a class="pagenav__link pagenav__link--prev" href="investing-basics.html">
+      <span class="pagenav__dir">Previous</span>
+      <span class="pagenav__title">What investing actually is</span></a>
+    <a class="pagenav__link pagenav__link--next" href="investing-medium.html">
+      <span class="pagenav__dir">Next</span>
+      <span class="pagenav__title">Medium-risk investments</span></a>
+  </nav>
+  </article>
+</div>
 </main>
   <footer class="site-footer">
     <div class="wrap">
