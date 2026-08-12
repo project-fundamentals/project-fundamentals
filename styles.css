@@ -288,7 +288,7 @@ main { padding-top:var(--nav-h); }
 }
 
 .hero__art { width:100%; display:flex; justify-content:center; }
-@media (min-width:900px) { .hero__art { justify-content:flex-end; } }
+@media (min-width:900px) { .hero__art { width:auto; justify-content:flex-end; } }
 
 .hero__mark {
   width:clamp(180px, 26vw, 340px);
@@ -774,22 +774,11 @@ main { padding-top:var(--nav-h); }
 @media (min-width:980px) { .team { grid-template-columns:repeat(4,1fr); } }
 
 .member {
-  padding:1.4rem 1.4rem 1.2rem; background:var(--bg2);
+  padding:1.1rem 1.4rem; background:var(--bg2);
   border:1px solid var(--border); border-top:3px solid var(--sky);
   border-radius:12px;
   text-align:center;
 }
-.member__avatar {
-  display:grid; place-items:center;
-  width:48px; height:48px; margin:0 auto .8rem;
-  border-radius:50%;
-  font-family:'Outfit',sans-serif; font-weight:700; font-size:15px;
-  color:#fff;
-}
-.member__avatar--a { background:var(--pillar-spending); }
-.member__avatar--b { background:var(--pillar-investing); }
-.member__avatar--c { background:var(--pillar-banking); }
-.member__avatar--d { background:var(--sky3); }
 .member__name { font-family:'Outfit',sans-serif; font-weight:700; font-size:1.0625rem; }
 .member__role { margin-top:.4rem; font-size:13px; color:var(--text3); }
 
