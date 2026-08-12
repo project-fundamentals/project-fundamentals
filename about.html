@@ -136,6 +136,47 @@
   </div>
 </section>
 
+<div class="wrap">
+  <div class="banner">
+    <svg class="banner__svg" viewBox="0 0 640 220" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <radialGradient id="glowAbout" cx="50%" cy="30%" r="75%">
+          <stop offset="0%" stop-color="var(--sky)" stop-opacity=".14"/>
+          <stop offset="55%" stop-color="var(--sky)" stop-opacity=".04"/>
+          <stop offset="100%" stop-color="var(--bg2)" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <rect width="640" height="220" fill="var(--bg2)"/>
+      <rect width="640" height="220" fill="url(#glowAbout)"/>
+      <ellipse cx="320" cy="176" rx="220" ry="18" fill="var(--bg3)"/>
+      <rect x="150" y="140" width="340" height="14" rx="6" fill="var(--bg)" stroke="var(--border2)" stroke-width="2"/>
+      <g transform="translate(276,104)">
+        <rect x="0" y="0" width="88" height="38" rx="4" fill="var(--bg)" stroke="var(--text2)" stroke-width="2.5"/>
+        <rect x="6" y="6" width="76" height="26" fill="var(--sky4)"/>
+        <path d="M-6 38 h100 l-6 10 h-88 z" fill="var(--bg3)" stroke="var(--text2)" stroke-width="2"/>
+      </g>
+      <rect x="188" y="118" width="30" height="26" rx="3" fill="var(--sky4)" stroke="var(--pillar-spending)" stroke-width="1.6" transform="rotate(-6 203 131)"/>
+      <rect x="416" y="116" width="30" height="26" rx="3" fill="var(--sky4)" stroke="var(--pillar-banking)" stroke-width="1.6" transform="rotate(7 431 129)"/>
+      <g transform="translate(96,64)">
+        <circle cx="20" cy="16" r="15" fill="none" stroke="var(--text2)" stroke-width="2.5"/>
+        <path d="M0 66 a20 20 0 0 1 40 0" fill="none" stroke="var(--text2)" stroke-width="2.5"/>
+      </g>
+      <g transform="translate(196,44)">
+        <circle cx="20" cy="16" r="15" fill="none" stroke="var(--pillar-spending)" stroke-width="2.5"/>
+        <path d="M0 66 a20 20 0 0 1 40 0" fill="none" stroke="var(--pillar-spending)" stroke-width="2.5"/>
+      </g>
+      <g transform="translate(404,44)">
+        <circle cx="20" cy="16" r="15" fill="none" stroke="var(--pillar-investing)" stroke-width="2.5"/>
+        <path d="M0 66 a20 20 0 0 1 40 0" fill="none" stroke="var(--pillar-investing)" stroke-width="2.5"/>
+      </g>
+      <g transform="translate(504,64)">
+        <circle cx="20" cy="16" r="15" fill="none" stroke="var(--pillar-banking)" stroke-width="2.5"/>
+        <path d="M0 66 a20 20 0 0 1 40 0" fill="none" stroke="var(--pillar-banking)" stroke-width="2.5"/>
+      </g>
+    </svg>
+  </div>
+</div>
+
 <section class="section">
   <div class="wrap wrap--narrow">
     <h2 class="section-heading section-heading--accent">Why we built it</h2>
@@ -161,12 +202,11 @@
 <section class="section">
   <div class="wrap">
     <h2 class="section-heading section-heading--accent">The team</h2>
-    <!-- TODO: replace the four placeholders below with real names, classes and roles. -->
     <ul class="team">
-      <li class="member"><p class="member__name">Name</p><p class="member__role">Role — e.g. research lead, spending psychology</p></li>
-      <li class="member"><p class="member__name">Name</p><p class="member__role">Role — e.g. investing research</p></li>
-      <li class="member"><p class="member__name">Name</p><p class="member__role">Role — e.g. banking research, website</p></li>
-      <li class="member"><p class="member__name">Name</p><p class="member__role">Role — e.g. Instagram content, design</p></li>
+      <li class="member"><span class="member__avatar member__avatar--a" aria-hidden="true">AH</span><p class="member__name">Aiden Han</p></li>
+      <li class="member"><span class="member__avatar member__avatar--b" aria-hidden="true">TJ</span><p class="member__name">Tan Jingkai</p></li>
+      <li class="member"><span class="member__avatar member__avatar--c" aria-hidden="true">EZ</span><p class="member__name">Elijah Zhao</p></li>
+      <li class="member"><span class="member__avatar member__avatar--d" aria-hidden="true">JP</span><p class="member__name">Jared Pak</p></li>
     </ul>
     <p class="section-body">Hwa Chong Institution — Project Work, 2026.</p>
   </div>
@@ -181,41 +221,15 @@
 </main>
   <footer class="site-footer">
     <div class="wrap">
-      <div class="site-footer__grid">
-      <div class="site-footer__col">
-        <p class="site-footer__coltitle"><a href="spending.html">Spending &amp; Clickbait</a></p>
+      <nav class="site-footer__nav" aria-label="Footer">
         <ul>
-          <li><a href="spending-why.html">Why we overspend</a></li>
-          <li><a href="spending-digital.html">Why tapping doesn&#x27;t feel like spending</a></li>
-          <li><a href="spending-clickbait.html">Clickbait &amp; marketing tactics</a></li>
-          <li><a href="spending-scams.html">Scams &amp; &#x27;too good to be true&#x27;</a></li>
-        </ul>
-      </div>
-      <div class="site-footer__col">
-        <p class="site-footer__coltitle"><a href="investing.html">Investing &amp; Growth</a></p>
-        <ul>
-          <li><a href="investing-basics.html">What investing actually is</a></li>
-          <li><a href="investing-low.html">Low-risk investments</a></li>
-          <li><a href="investing-medium.html">Medium-risk investments</a></li>
-          <li><a href="investing-high.html">High-risk &amp; speculation</a></li>
-        </ul>
-      </div>
-      <div class="site-footer__col">
-        <p class="site-footer__coltitle"><a href="banking.html">Banking &amp; Payments</a></p>
-        <ul>
-          <li><a href="banking-how.html">How banks actually work</a></li>
-          <li><a href="banking-payments.html">Digital payments &amp; e-wallets</a></li>
-          <li><a href="banking-credit.html">Credit cards &amp; the debt trap</a></li>
-        </ul>
-      </div>
-      <div class="site-footer__col">
-        <p class="site-footer__coltitle"><a href="about.html">About</a></p>
-        <ul>
-          <li><a href="about.html">Our research</a></li>
+          <li><a href="spending.html">Spending</a></li>
+          <li><a href="investing.html">Investing</a></li>
+          <li><a href="banking.html">Banking</a></li>
+          <li><a href="about.html">About</a></li>
           <li><a href="https://www.instagram.com/project.fundamentals/" target="_blank" rel="noopener">Instagram</a></li>
         </ul>
-      </div>
-      </div>
+      </nav>
 
       <div class="site-footer__base">
         <p class="site-footer__cred">Project Fundamentals — a Project Work resource, 2026</p>

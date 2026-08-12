@@ -4,12 +4,20 @@
 
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
+  function pulseUpdate(el) {
+    if (!el || reduceMotion.matches) return;
+    el.classList.remove('value-pulse');
+    // Force reflow so the animation can retrigger on rapid slider drags.
+    void el.offsetWidth;
+    el.classList.add('value-pulse');
+  }
+
   /* ---- Navigation: mobile toggle + mega menu ------------------------- */
 
   var toggle = document.getElementById('navToggle');
   var menu = document.getElementById('navMenu');
   var triggers = Array.prototype.slice.call(document.querySelectorAll('.nav__trigger'));
-  var desktop = window.matchMedia('(min-width: 900px)');
+  var desktop = window.matchMedia('(min-width: 1000px)');
 
   function closePanels(except) {
     triggers.forEach(function (t) {
@@ -45,6 +53,31 @@
       trigger.setAttribute('aria-expanded', String(!isOpen));
       panel.hidden = isOpen;
     });
+
+    /* Desktop: open on hover, close on hover-away (with a short grace
+       delay). Hovering the panel itself counts as staying inside, since
+       it's a DOM descendant of the nav item regardless of its absolute
+       position. Click still works underneath for keyboard/touch users. */
+    var item = trigger.closest('.nav__item--has-panel');
+    var closeTimer = null;
+
+    if (item) {
+      item.addEventListener('mouseenter', function () {
+        if (!desktop.matches) return;
+        if (closeTimer) { clearTimeout(closeTimer); closeTimer = null; }
+        closePanels(trigger);
+        trigger.setAttribute('aria-expanded', 'true');
+        panel.hidden = false;
+      });
+
+      item.addEventListener('mouseleave', function () {
+        if (!desktop.matches) return;
+        closeTimer = setTimeout(function () {
+          trigger.setAttribute('aria-expanded', 'false');
+          panel.hidden = true;
+        }, 150);
+      });
+    }
   });
 
   /* Close when focus or a click leaves the header. */
@@ -153,6 +186,9 @@
 
       var neverNote = document.getElementById('neverNote');
       if (neverNote) neverNote.hidden = result.cleared;
+
+      pulseUpdate(monthsOut);
+      pulseUpdate(interestOut);
     }
 
     balanceInput.addEventListener('input', update);
@@ -239,5 +275,137 @@
 
       revealTargets.forEach(function (el) { observer.observe(el); });
     }
+  }
+
+  /* ---- Reading progress bar (article pages only) ----------------------- */
+
+  var readbarFill = document.getElementById('readbarFill');
+  var articleEl = document.querySelector('.article');
+
+  if (readbarFill && articleEl) {
+    var updateReadbar = function () {
+      var rect = articleEl.getBoundingClientRect();
+      var articleTop = rect.top + window.scrollY;
+      var articleHeight = articleEl.offsetHeight;
+      var viewportH = window.innerHeight;
+      var scrolled = window.scrollY - articleTop + viewportH * 0.5;
+      var total = articleHeight;
+      var pct = total > 0 ? (scrolled / total) * 100 : 0;
+      pct = Math.max(0, Math.min(100, pct));
+      readbarFill.style.width = pct + '%';
+    };
+    window.addEventListener('scroll', updateReadbar, { passive: true });
+    window.addEventListener('resize', updateReadbar);
+    updateReadbar();
+  }
+
+  /* ---- Generic step-through flow calculator (deposit journey etc.) ----- */
+
+  document.querySelectorAll('.flowcalc').forEach(function (widget) {
+    var steps = Array.prototype.slice.call(widget.querySelectorAll('.flowcalc__step'));
+    var amountEl = widget.querySelector('.flowcalc__amount');
+    var descEl = widget.querySelector('.flowcalc__desc');
+    if (!steps.length || !amountEl || !descEl) return;
+
+    steps.forEach(function (step) {
+      step.addEventListener('click', function () {
+        steps.forEach(function (s) {
+          s.classList.remove('is-active');
+          s.setAttribute('aria-selected', 'false');
+        });
+        step.classList.add('is-active');
+        step.setAttribute('aria-selected', 'true');
+        amountEl.textContent = step.dataset.amount || '';
+        descEl.textContent = step.dataset.desc || '';
+        pulseUpdate(amountEl);
+      });
+    });
+  });
+
+  /* ---- Compound growth calculator (investing-basics.html) -------------- */
+
+  var monthlyInput = document.getElementById('monthlyInput');
+  var yearsInput = document.getElementById('yearsInput');
+
+  if (monthlyInput && yearsInput) {
+    var monthlyOutput = document.getElementById('monthlyOutput');
+    var yearsOutput = document.getElementById('yearsOutput');
+    var contributedOut = document.getElementById('contributedOut');
+    var growthOut = document.getElementById('growthOut');
+    var growthDiffOut = document.getElementById('growthDiffOut');
+    var ANNUAL_RETURN = 0.06;
+
+    var formatUSD = function (n) {
+      return '$' + Math.round(n).toLocaleString('en-US');
+    };
+
+    var updateGrowth = function () {
+      var monthly = Number(monthlyInput.value);
+      var years = Number(yearsInput.value);
+      var months = years * 12;
+      var monthlyRate = ANNUAL_RETURN / 12;
+
+      var contributed = monthly * months;
+      var futureValue = monthlyRate === 0
+        ? contributed
+        : monthly * ((Math.pow(1 + monthlyRate, months) - 1) / monthlyRate);
+      var growthPortion = futureValue - contributed;
+
+      monthlyOutput.textContent = formatUSD(monthly);
+      yearsOutput.textContent = years + (years === 1 ? ' year' : ' years');
+      contributedOut.textContent = formatUSD(contributed);
+      growthOut.textContent = formatUSD(futureValue);
+      growthDiffOut.textContent = formatUSD(growthPortion);
+
+      pulseUpdate(contributedOut);
+      pulseUpdate(growthOut);
+    };
+
+    monthlyInput.addEventListener('input', updateGrowth);
+    yearsInput.addEventListener('input', updateGrowth);
+    updateGrowth();
+  }
+
+  /* ---- Impulse-cost calculator (spending-why.html) ---------------------- */
+
+  var priceInput = document.getElementById('priceInput');
+  var freqInput = document.getElementById('freqInput');
+
+  if (priceInput && freqInput) {
+    var priceOutput = document.getElementById('priceOutput');
+    var freqOutput = document.getElementById('freqOutput');
+    var monthOut = document.getElementById('monthOut');
+    var yearOut = document.getElementById('yearOut');
+    var yearDescOut = document.getElementById('yearDescOut');
+    var SCHOOL_WEEKS = 40;
+    var WEEKS_PER_MONTH = 4.33;
+    var SSB_MIN = 500;
+
+    var fmt = function (n) { return '$' + Math.round(n).toLocaleString('en-US'); };
+
+    var updateImpulse = function () {
+      var price = Number(priceInput.value);
+      var freq = Number(freqInput.value);
+      var perWeek = price * freq;
+      var perMonth = perWeek * WEEKS_PER_MONTH;
+      var perYear = perWeek * SCHOOL_WEEKS;
+
+      priceOutput.textContent = '$' + price;
+      freqOutput.textContent = freq + '\u00d7';
+      monthOut.textContent = fmt(perMonth);
+      yearOut.textContent = fmt(perYear);
+      pulseUpdate(monthOut);
+      pulseUpdate(yearOut);
+
+      if (perYear >= SSB_MIN) {
+        yearDescOut.textContent = "That's " + fmt(perYear - SSB_MIN) + ' more than the $500 minimum to open a Singapore Savings Bond.';
+      } else {
+        yearDescOut.textContent = 'Keep going a bit longer and it clears the $500 minimum to open a Singapore Savings Bond.';
+      }
+    };
+
+    priceInput.addEventListener('input', updateImpulse);
+    freqInput.addEventListener('input', updateImpulse);
+    updateImpulse();
   }
 })();

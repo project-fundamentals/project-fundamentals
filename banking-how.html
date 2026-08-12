@@ -128,6 +128,7 @@
     </nav>
   </header>
 <main id="main">
+    <div class="readbar" aria-hidden="true"><div class="readbar__fill" id="readbarFill"></div></div>
 <nav class="breadcrumb" aria-label="Breadcrumb"><div class="wrap"><ol>
   <li><a href="index.html">Home</a></li>
   <li><a href="banking.html">Banking</a></li>
@@ -136,6 +137,7 @@
 <div class="layout wrap">
   <aside class="sidebar" aria-labelledby="sidebar-heading">
     <p class="sidebar__heading" id="sidebar-heading">In this section</p>
+    <p class="sidebar__progress"><span>1 of 3</span><span class="sidebar__dots" aria-hidden="true"><span class="sidebar__dot sidebar__dot--current"></span><span class="sidebar__dot"></span><span class="sidebar__dot"></span></span></p>
     <ul class="sidebar__list">
       <li><a href="banking.html">Overview</a></li>
       <li><a href="banking-how.html" aria-current="page">How banks actually work</a></li>
@@ -144,107 +146,50 @@
     </ul>
   </aside>
   <article class="article">
-    <p class="article__eyebrow">Banking</p>
+    <p class="article__eyebrow">Banking <span class="article__meta">· ~2 min read</span></p>
     <h1 class="article__title">How banks actually work</h1>
     <p class="article__lede">Where a bank&#x27;s profit really comes from.</p>
-    <div class="banner" aria-hidden="true">
-      <svg class="banner__svg" viewBox="0 0 640 150" preserveAspectRatio="xMidYMid slice">
-        <rect width="640" height="150" fill="var(--bg2)"/>
-        <!-- bank -->
-        <g transform="translate(48,30)">
-          <path d="M0 34 L57 6 L114 34 Z" fill="var(--bg)" stroke="var(--text2)" stroke-width="2.5" stroke-linejoin="round"/>
-          <rect x="8" y="34" width="98" height="48" fill="var(--bg)" stroke="var(--text2)" stroke-width="2.5"/>
-          <line x1="28" y1="40" x2="28" y2="76" stroke="var(--text2)" stroke-width="2.5"/>
-          <line x1="57" y1="40" x2="57" y2="76" stroke="var(--text2)" stroke-width="2.5"/>
-          <line x1="86" y1="40" x2="86" y2="76" stroke="var(--text2)" stroke-width="2.5"/>
-          <rect x="0" y="82" width="114" height="9" fill="var(--bg)" stroke="var(--text2)" stroke-width="2.5"/>
-          <text x="57" y="28" text-anchor="middle" font-size="11" font-weight="800" fill="var(--accent)">$</text>
-        </g>
-        <!-- MRT gantry with tap -->
-        <g transform="translate(250,34)">
-          <rect x="0" y="0" width="16" height="96" rx="4" fill="var(--bg3)" stroke="var(--text2)" stroke-width="2.5"/>
-          <rect x="96" y="0" width="16" height="96" rx="4" fill="var(--bg3)" stroke="var(--text2)" stroke-width="2.5"/>
-          <rect x="10" y="34" width="44 " height="10" rx="5" fill="var(--sky4)" stroke="var(--accent)" stroke-width="2"/>
-          <rect x="58" y="34" width="44" height="10" rx="5" fill="var(--sky4)" stroke="var(--accent)" stroke-width="2"/>
-          <rect x="-4" y="6" width="24" height="14" rx="4" fill="var(--sky4)" stroke="var(--accent)" stroke-width="2"/>
-          <path d="M26 2 a12 12 0 0 1 0 20 M33 -4 a20 20 0 0 1 0 32" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/>
-          <text x="56" y="118" text-anchor="middle" font-size="10" fill="var(--text2)">tap in · tap out</text>
-        </g>
-        <!-- card + phone pay -->
-        <g transform="translate(440,42)">
-          <rect x="0" y="8" width="82" height="52" rx="9" fill="var(--bg)" stroke="var(--text2)" stroke-width="2.5"/>
-          <rect x="0" y="17" width="82" height="11" fill="var(--text2)" opacity=".3"/>
-          <rect x="8" y="38" width="22" height="14" rx="3" fill="var(--sky4)" stroke="var(--amber)" stroke-width="1.5"/>
-          <g transform="translate(104,-6)">
-            <rect x="0" y="0" width="46" height="78" rx="10" fill="var(--bg)" stroke="var(--text2)" stroke-width="2.5"/>
-            <rect x="6" y="8" width="34" height="50" rx="3" fill="var(--bg3)"/>
-            <rect x="11" y="16" width="24" height="12" rx="3" fill="var(--sky4)" stroke="var(--accent)" stroke-width="1.5"/>
-            <text x="23" y="25" text-anchor="middle" font-size="7" font-weight="700" fill="var(--accent)">PAID</text>
-            <circle cx="23" cy="66" r="4" fill="none" stroke="var(--text2)" stroke-width="2"/>
-          </g>
-        </g>
-      </svg>
-    </div>
+    <figure class="banner banner--photo">
+      <img src="banner-banking-how.jpg" alt="A bank building with money flowing in through a door marked deposit and out through a door marked loan." width="1200" height="670" loading="lazy" decoding="async">
+    </figure>
     <aside class="learn" aria-labelledby="learn-heading">
-      <p class="learn__heading" id="learn-heading">
-        <svg class="learn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 8l10 5 8-4v6h2V8L12 3z"/><path d="M6 11.5V15c0 1.7 2.7 3 6 3s6-1.3 6-3v-3.5l-6 3-6-3z"/></svg>
-        What you'll learn
-      </p>
+      <p class="learn__heading" id="learn-heading">By the end of this page</p>
       <ul class="learn__list">
-      <li>Where a bank&#x27;s profit actually comes from</li>
-      <li>Why savings rates are low and card rates are high — on purpose</li>
-      <li>How to choose between a savings account and a fixed deposit</li>
+      <li><span class="learn__check" aria-hidden="true"></span>Where a bank&#x27;s profit actually comes from</li>
+      <li><span class="learn__check" aria-hidden="true"></span>Why savings rates are low and card rates are high — on purpose</li>
+      <li><span class="learn__check" aria-hidden="true"></span>How to choose between a savings account and a fixed deposit</li>
       </ul>
     </aside>
 
     <p>Banks are not just a safe place to store money. DBS, OCBC and UOB are among the most profitable companies in Singapore — and knowing how that business makes its money explains almost everything about how they treat yours.</p>
 
-    <div class="statline">
-      <p class="statline__value">78.9%</p>
-      <p class="statline__label">of students we surveyed do not know how bank systems work</p>
-    </div>
-
     <h2>Where a bank's profit comes from</h2>
-    <p>Banks earn money primarily by charging interest on the loans they give out. Deposits from customers are what fund those loans. The gap between the interest a bank pays you on savings and the interest it charges borrowers is the core of the business.</p>
+    <p>Banks earn money primarily by charging interest on the loans they give out. Deposits from customers are what fund those loans.</p>
+    <p class="simple-terms"><span class="simple-terms__tag">In simple terms</span> the gap between the interest a bank pays you on savings and the interest it charges borrowers is the core of the business. Real banking involves regulatory capital requirements, fees, and other income sources too — this is the simplified version worth knowing first.</p>
     <p>This is why a savings account pays a low rate while a credit card charges a high one. Both numbers are set by the same institution, and the difference between them is the point.</p>
 
-    <figure class="scenario" role="img" aria-label="Money flow: savers deposit money into the bank and earn low interest; the bank lends that money to borrowers and charges high interest; the gap between the two rates is the bank's profit.">
-      <svg class="scenario__svg" viewBox="0 0 640 200">
-        <!-- saver -->
-        <g transform="translate(30,58)">
-          <circle cx="34" cy="18" r="14" fill="none" stroke="var(--text2)" stroke-width="2.5"/>
-          <path d="M12 62 a22 22 0 0 1 44 0" fill="none" stroke="var(--text2)" stroke-width="2.5"/>
-          <text x="34" y="88" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--text)">You (saver)</text>
-        </g>
-        <!-- bank -->
-        <g transform="translate(255,42)">
-          <path d="M0 34 L65 4 L130 34 Z" fill="var(--bg3)" stroke="var(--text2)" stroke-width="2.5" stroke-linejoin="round"/>
-          <rect x="10" y="34" width="110" height="52" fill="var(--bg2)" stroke="var(--text2)" stroke-width="2.5"/>
-          <line x1="30" y1="40" x2="30" y2="80" stroke="var(--text2)" stroke-width="2.5"/>
-          <line x1="65" y1="40" x2="65" y2="80" stroke="var(--text2)" stroke-width="2.5"/>
-          <line x1="100" y1="40" x2="100" y2="80" stroke="var(--text2)" stroke-width="2.5"/>
-          <rect x="0" y="86" width="130" height="10" fill="var(--bg3)" stroke="var(--text2)" stroke-width="2.5"/>
-          <text x="65" y="118" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--text)">Bank</text>
-        </g>
-        <!-- borrower -->
-        <g transform="translate(548,58)">
-          <circle cx="34" cy="18" r="14" fill="none" stroke="var(--text2)" stroke-width="2.5"/>
-          <path d="M12 62 a22 22 0 0 1 44 0" fill="none" stroke="var(--text2)" stroke-width="2.5"/>
-          <text x="34" y="88" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--text)">Borrower</text>
-        </g>
-        <!-- flows -->
-        <path d="M104 76 h140" stroke="var(--green)" stroke-width="3" marker-end="none"/>
-        <path d="M236 70 l10 6 l-10 6 z" fill="var(--green)"/>
-        <text x="172" y="66" text-anchor="middle" font-size="11" font-weight="700" fill="var(--green)">deposits in</text>
-        <text x="172" y="98" text-anchor="middle" font-size="10.5" fill="var(--text2)">earns ~1–3%</text>
-        <path d="M394 76 h140" stroke="var(--red)" stroke-width="3"/>
-        <path d="M526 70 l10 6 l-10 6 z" fill="var(--red)"/>
-        <text x="462" y="66" text-anchor="middle" font-size="11" font-weight="700" fill="var(--red)">loans out</text>
-        <text x="462" y="98" text-anchor="middle" font-size="10.5" fill="var(--text2)">charges ~5–26%</text>
-        <text x="320" y="176" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--accent)">the gap between those two rates = the bank's profit</text>
-      </svg>
-      <figcaption class="scenario__caption">Illustrative rates. Your deposit doesn't sit in a vault — it goes back out the other door at a higher price.</figcaption>
-    </figure>
+    <div class="flowcalc" aria-label="Interactive: where does your $1,000 deposit go?">
+      <p class="flowcalc__label">Try it — where does your $1,000 deposit actually go?</p>
+      <div class="flowcalc__steps" role="tablist" aria-label="Deposit journey steps">
+        <button class="flowcalc__step is-active" type="button" role="tab" aria-selected="true" data-step="1"
+          data-amount="$1,000" data-desc="You deposit $1,000 into a savings account.">1</button>
+        <button class="flowcalc__step" type="button" role="tab" aria-selected="false" data-step="2"
+          data-amount="$100 kept" data-desc="The bank keeps a portion on hand for liquidity — say $100 — so it can cover everyday withdrawals.">2</button>
+        <button class="flowcalc__step" type="button" role="tab" aria-selected="false" data-step="3"
+          data-amount="$900 lent out" data-desc="The remaining $900 gets lent to a borrower — for a home, a car, or a business.">3</button>
+        <button class="flowcalc__step" type="button" role="tab" aria-selected="false" data-step="4"
+          data-amount="~6% charged" data-desc="The borrower pays the bank interest on that $900 — an illustrative 6% a year.">4</button>
+        <button class="flowcalc__step" type="button" role="tab" aria-selected="false" data-step="5"
+          data-amount="~1–2% paid to you" data-desc="You, the saver, receive a much smaller interest rate on your original $1,000.">5</button>
+        <button class="flowcalc__step" type="button" role="tab" aria-selected="false" data-step="6"
+          data-amount="The spread" data-desc="The gap between what the bank charges borrowers and what it pays savers is the bank's profit on this one transaction.">6</button>
+      </div>
+      <div class="flowcalc__detail" aria-live="polite">
+        <p class="flowcalc__amount">$1,000</p>
+        <p class="flowcalc__desc">You deposit $1,000 into a savings account.</p>
+      </div>
+      <p class="calculator__disclaimer">Illustrative rates only — real interest rates, reserve ratios and terms vary by bank.</p>
+    </div>
 
     <div class="callout">
       <p>Every loan, credit card balance, or overdraft that is not paid off in full is generating income for the bank — not just providing a convenience for you.</p>
@@ -261,6 +206,7 @@
     <p>A regular savings account gives you full access to your money at any time, and pays very little for that flexibility. A fixed deposit pays more because you commit to leaving the money alone for a set period — the bank can plan around it.</p>
     <p>Neither is better in general. Which one fits depends entirely on whether you might need the money soon.</p>
 
+  <p class="pagenav__progress">You've read 1 of 3 in Banking.</p>
   <nav class="pagenav" aria-label="Section pages">
 
     <a class="pagenav__link pagenav__link--next" href="banking-payments.html">
@@ -272,41 +218,15 @@
 </main>
   <footer class="site-footer">
     <div class="wrap">
-      <div class="site-footer__grid">
-      <div class="site-footer__col">
-        <p class="site-footer__coltitle"><a href="spending.html">Spending &amp; Clickbait</a></p>
+      <nav class="site-footer__nav" aria-label="Footer">
         <ul>
-          <li><a href="spending-why.html">Why we overspend</a></li>
-          <li><a href="spending-digital.html">Why tapping doesn&#x27;t feel like spending</a></li>
-          <li><a href="spending-clickbait.html">Clickbait &amp; marketing tactics</a></li>
-          <li><a href="spending-scams.html">Scams &amp; &#x27;too good to be true&#x27;</a></li>
-        </ul>
-      </div>
-      <div class="site-footer__col">
-        <p class="site-footer__coltitle"><a href="investing.html">Investing &amp; Growth</a></p>
-        <ul>
-          <li><a href="investing-basics.html">What investing actually is</a></li>
-          <li><a href="investing-low.html">Low-risk investments</a></li>
-          <li><a href="investing-medium.html">Medium-risk investments</a></li>
-          <li><a href="investing-high.html">High-risk &amp; speculation</a></li>
-        </ul>
-      </div>
-      <div class="site-footer__col">
-        <p class="site-footer__coltitle"><a href="banking.html">Banking &amp; Payments</a></p>
-        <ul>
-          <li><a href="banking-how.html">How banks actually work</a></li>
-          <li><a href="banking-payments.html">Digital payments &amp; e-wallets</a></li>
-          <li><a href="banking-credit.html">Credit cards &amp; the debt trap</a></li>
-        </ul>
-      </div>
-      <div class="site-footer__col">
-        <p class="site-footer__coltitle"><a href="about.html">About</a></p>
-        <ul>
-          <li><a href="about.html">Our research</a></li>
+          <li><a href="spending.html">Spending</a></li>
+          <li><a href="investing.html">Investing</a></li>
+          <li><a href="banking.html">Banking</a></li>
+          <li><a href="about.html">About</a></li>
           <li><a href="https://www.instagram.com/project.fundamentals/" target="_blank" rel="noopener">Instagram</a></li>
         </ul>
-      </div>
-      </div>
+      </nav>
 
       <div class="site-footer__base">
         <p class="site-footer__cred">Project Fundamentals — a Project Work resource, 2026</p>
